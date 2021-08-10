@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusionListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+                 xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+                 xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+                xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" 
+                
+             x:Class="PlantBU.App">
+    <Application.Resources>
+        <ResourceDictionary>
+        <!-- Colors -->
+            <Color x:Key="Primary">CornflowerBlue</Color>
+            <Color x:Key="Secondary">SteelBlue</Color>
+            <Color x:Key="BackgroudPage">White</Color>
+            <Color x:Key="Border">White</Color>
+            <Color x:Key="BackgroundTrans">Transparent</Color>
+            <Color x:Key="Text">White</Color>
+            <Color x:Key="TextBlack">black</Color>
+            <Color x:Key="TextBlue">CornflowerBlue</Color>
+        <!-- Fonts -->
+       
+        <!-- Implicit styles  -->
+            <Style  x:Key="ImplicitbaseStyle" TargetType="View">
+            </Style>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True"  >
+                <Setter Property="BackgroundColor"  Value="{StaticResource BackgroudPage}" />
+            </Style>
+            <Style TargetType="SearchBar" BasedOn="{StaticResource ImplicitbaseStyle}">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Placeholder" Value="Search Here..." />
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+            </Style>
+            <Style TargetType="Picker">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+        </Style>
+            <Style TargetType="Frame" >
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Margin" Value="5,5,5,0" />
+                <Setter Property="BorderColor" Value="{StaticResource Border}" />
+            </Style>
+            <Style TargetType="ScrollView">
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+                <Setter Property="BorderColor" Value="{StaticResource Text}" />
+            </Style>
+            <Style TargetType="syncfusion:SfExpander">
+                <Setter Property="HeaderBackgroundColor" Value="{StaticResource Secondary}" />
+            </Style>
+            <Style TargetType="inputLayout:SfTextInputLayout">
+                <Setter Property="UnfocusedColor" Value="{StaticResource Primary}" />
+                <Setter Property="FocusedColor" Value="{StaticResource BackgroudPage}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource Text}" />
+            </Style>
+            <Style TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource Text}" />
+            </Style>
+            <Style TargetType="combobox:SfComboBox">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+            </Style>
+            <Style TargetType="autocomplete:SfAutoComplete">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="{StaticResource TextBlack}" />
+                <Setter Property="TextHighlightMode" Value="MultipleOccurrence" />
+                <Setter Property="WatermarkColor" Value="{StaticResource Text}" />
+            </Style>
+           
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

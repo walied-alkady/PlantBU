@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlantBU.Views.EmployeeSchedulePerformancePage"
+             xmlns:resource="clr-namespace:PlantBU.Properties" xmlns:local="clr-namespace:PlantBU.ViewModels" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title="{x:Static resource:Resources.SchedulePerformance}">
+    <ContentPage.BindingContext>
+        <local:EmployeeSchedulePerformanceViewModel />
+    </ContentPage.BindingContext>
+    <chart:SfChart VerticalOptions="FillAndExpand" SideBySideSeriesPlacement="False">
+
+        <chart:SfChart.PrimaryAxis>
+
+            <chart:CategoryAxis  >
+
+                <chart:CategoryAxis.Title>
+
+                    <chart:ChartAxisTitle Text="{x:Static resource:Resources.Employees}"/>
+
+                </chart:CategoryAxis.Title>
+
+            </chart:CategoryAxis>
+
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+
+            <chart:NumericalAxis>
+
+                <chart:NumericalAxis.Title>
+
+                    <chart:ChartAxisTitle>
+                        <chart:ChartAxisTitle.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Source="{x:Static resource:Resources.Tasks}" />
+                                <Binding Source="{x:Static resource:Resources.Number}" />
+                            </MultiBinding>
+                        </chart:ChartAxisTitle.Text>
+                    </chart:ChartAxisTitle>
+
+                </chart:NumericalAxis.Title>
+
+            </chart:NumericalAxis>
+
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series   >
+
+                    <chart:ColumnSeries ItemsSource="{Binding ChartData}" Label="{x:Static resource:Resources.Employee}" XBindingPath="Employee" YBindingPath="TasksNo" >
+                
+                <chart:ColumnSeries.DataMarker>
+
+                    <chart:ChartDataMarker/>
+
+                </chart:ColumnSeries.DataMarker>
+            </chart:ColumnSeries>
+                    <chart:ColumnSeries ItemsSource="{Binding ChartData}" Label="{x:Static resource:Resources.Employee}" XBindingPath="Employee" YBindingPath="TasksNoDone"  Width="0.5">
+
+                <chart:ColumnSeries.DataMarker>
+
+                    <chart:ChartDataMarker/>
+
+                </chart:ColumnSeries.DataMarker>
+            </chart:ColumnSeries>
+
+        </chart:SfChart.Series>
+        
+        <chart:SfChart.ChartBehaviors>
+
+            <chart:ChartZoomPanBehavior ZoomMode="X" EnableDoubleTap="True"/>
+
+        </chart:SfChart.ChartBehaviors>
+
+    </chart:SfChart>
+</ContentPage>

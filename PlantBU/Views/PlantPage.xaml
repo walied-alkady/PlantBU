@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+    xmlns:local="clr-namespace:PlantBU.ViewModels"
+    xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+    x:Class="PlantBU.Views.PlantPage"
+    xmlns:resource="clr-namespace:PlantBU.Properties"
+            Title="{x:Static resource:Resources.Plant}">
+   
+    <ContentPage.BindingContext>
+        <local:PlantViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems      >
+        <!--ToolbarItem Name="Add" Order="Secondary" Text="Add"   Clicked="ToolbarItem_Clicked"/-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+
+            <ScrollView >
+                <StackLayout >
+                    <syncfusion:SfExpander>
+                        <syncfusion:SfExpander.Header>
+                            <Grid HeightRequest="50">
+                                <Label Text="{x:Static resource:Resources.Plant}"  VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                            </Grid>
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                            
+                            <StackLayout>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Code}"/>
+                                    <Entry  x:Name="BUCodeEntry" 
+                                            Text="{Binding Plant.Code}" 
+                                            TextChanged="Entry_TextChanged"
+                                            IsReadOnly= "{Binding IsEnabled}"                                                         
+                                            TabIndex="1"
+                                            Placeholder="Plant Code"
+                                            ReturnType="Next"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Description}"/>
+                                        <Entry  x:Name="DescriptionEntry" 
+                                            Text="{Binding Plant.Description}" 
+                                            TextChanged="Entry_TextChanged"
+                                            IsReadOnly= "{Binding IsEnabled}"                                                         
+                                            TabIndex="2"
+                                            ReturnType="Next"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Location}"/>
+                                        <Entry  x:Name="LocationEntry" 
+                                            Text="{Binding Plant.Location}" 
+                                            TextChanged="Entry_TextChanged"
+                                            IsReadOnly= "{Binding IsEnabled}"                                                         
+                                            TabIndex="3"
+                                            ReturnType="Next"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <Button x:Name="AddLine" Text="{x:Static resource:Resources.AddLine}" Clicked="Button_Clicked"/>
+                                </Frame>
+                            </StackLayout>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander IsVisible="{Binding IsProductionsLineView}" >
+                        <syncfusion:SfExpander.Header>
+                            <Grid HeightRequest="50">
+                                <Label Text="{x:Static resource:Resources.ProductionLine}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                            </Grid>
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                            <ScrollView >
+                                <sync:SfListView x:Name="listViewLines" 
+                                     ItemsSource="{Binding ProductionLines}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}" 
+                                                 AutoFitMode="DynamicHeight">
+                                    <sync:SfListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame >
+                                                        <Grid VerticalOptions="FillAndExpand">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="Auto" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label  Text="{Binding Code}" FontAttributes="Bold" />
+                                                    <Label Grid.Column="1"  Text="{Binding Description}"  FontAttributes="Bold"/>
+                                                    <Label Grid.Row="1"  Text="{Binding ExtraData}" FontAttributes="Bold" />
+                                                        </Grid>
+                                            </Frame>
+                                               
+                                        </DataTemplate>
+                                    </sync:SfListView.ItemTemplate>
+                                </sync:SfListView>
+                            </ScrollView>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander IsVisible="{Binding IsShopsView}">
+                        <syncfusion:SfExpander.Header>
+                            <Grid HeightRequest="50" >
+                                <Label Text="{x:Static resource:Resources.Shops}"  VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                            </Grid>
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                            <ScrollView>
+                                <sync:SfListView x:Name="listViewShops" 
+                                     ItemsSource="{Binding Shops}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                                         VerticalOptions="FillAndExpand" AutoFitMode="DynamicHeight">
+
+                                    <sync:SfListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame >
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Label Grid.Row="0"  Text="{Binding ShopName}" FontAttributes="Bold" FontSize="Small"/>
+                                                    <Label Grid.Column="1"  Text="{Binding ShopDescription}" FontSize="Small"/>
+                                                </Grid>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </sync:SfListView.ItemTemplate>
+                                </sync:SfListView>
+                            </ScrollView>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <busyindicator:SfBusyIndicator x:Name="busyindicator" 
+                                       AnimationType="Gear" 
+                                       ViewBoxWidth = "150" 
+                                       ViewBoxHeight="150" 
+                                       Title="Loading..."
+                                       TitlePlacement="Bottom"
+                                       IsBusy="{Binding IsBusy}"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

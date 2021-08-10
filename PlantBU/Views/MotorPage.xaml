@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" 
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             x:Class="PlantBU.Views.MotorPage"
+             x:Name="motorPage"
+             xmlns:resource="clr-namespace:PlantBU.Properties" xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title="{x:Static resource:Resources.Motor}">
+    <ContentPage.BindingContext>
+        <local:MotorViewModel />
+    </ContentPage.BindingContext>
+    <!--ContentPage.Title>
+        <MultiBinding StringFormat="{} {0} ">
+            <Binding Path="Motor.Code" />
+        </MultiBinding>
+    </ContentPage.Title-->
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="5" >
+                <syncfusion:SfExpander >
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.BasicData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Code}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="CodeAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.Code}" 
+                                            AutoCompleteSource="{Binding MotorCodesList}"                
+                                            ValueChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}"         
+                                            TabIndex="1"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Description}"/>
+                                    <autocomplete:SfAutoComplete  x:Name="DescriptionAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.Description}" 
+                                            AutoCompleteSource="{Binding MotorDescriptionsList}"
+                                            ValueChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="2"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.ManufacturerData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Brand}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="BrandAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.Brand}" 
+                                            AutoCompleteSource="{Binding MotorBrandsList}"                
+                                            ValueChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="3"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.BrandType}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="BrandTypeAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.BrandType}" 
+                                            AutoCompleteSource="{Binding MotorBrandsTypesList}"                
+                                            ValueChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="4"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander  >
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.ElectricalData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                            <StackLayout>
+                                <Label Text="{x:Static resource:Resources.Power}"/>
+                                    <Entry    x:Name="PowerEntry" 
+                                            Text="{Binding Motor.Power}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            
+                                            TabIndex="5"/>
+                                </StackLayout>
+                        </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Volt}"/>
+                                    <combobox:SfComboBox x:Name="VoltagecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         SelectedItem="{Binding Motor.Volt}"
+                                                         TextColor="Black"
+                                                         ComboBoxSource="{Binding MotorVoltList}" 
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="6"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Frequency}"/>
+                                    <combobox:SfComboBox x:Name="FrequencycomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         SelectedItem="{Binding Motor.Frequency}"
+                                                         TextColor="Black"
+                                                         ComboBoxSource="{Binding MotorFreqList}" 
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="7"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Current}"/>
+                                    <Entry    x:Name="CurrentEntry" 
+                                            Text="{Binding Motor.Current}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="8"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Poles}"/>
+                                    <combobox:SfComboBox x:Name="PolescomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         SelectedItem="{Binding Motor.Poles}"
+                                                         TextColor="Black"
+                                                         ComboBoxSource="{Binding MotorPolesList}" 
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="9"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.PowerFactor}"/>
+                                    <Entry x:Name="CosPhiEntry" 
+                                            Text="{Binding Motor.CosPhi}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="10"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander >
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.MechanicalData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Speed}"/>
+                                    <Entry x:Name="RPMEntry" 
+                                            Text="{Binding Motor.RPM}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="10"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.BearingDE}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="DEBearingAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                            SuggestionBoxPlacement="Bottom"                              
+                                            Text="{Binding Motor.BearingDE}" 
+                                            AutoCompleteSource="{Binding MotorBearingList}"                
+                                            ValueChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="11"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.BearingNDE}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="NDEBearingAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.BearingNDE}" 
+                                            AutoCompleteSource="{Binding MotorBearingList}"                
+                                            ValueChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="12"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.GreaseBrand}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="GreaseBrandAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.GreaseBrand}" 
+                                            AutoCompleteSource="{Binding MotorGreaseBrandList}"                
+                                            ValueChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="13"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.GreaseBrandType}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="GreaseBrandTypeAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"                   
+                                            Text="{Binding Motor.GreaseBrandType}" 
+                                            AutoCompleteSource="{Binding MotorGreaseBrandTypeList}"                
+                                            ValueChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="14"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.IntervalDay}"/>
+                                    <Entry x:Name="IntervalDaysEntry" 
+                                            Text="{Binding Motor.IntervalDays}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="15"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.GreaseQuantityDE}"/>
+
+                                    <Entry x:Name="QTYDEEntry" 
+                                            Text="{Binding Motor.QtyDE}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="16"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.GreaseQuantityNDE}"/>
+
+                                    <Entry x:Name="QTYNDEEntry" 
+                                            Text="{Binding Motor.QtyNDE}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="17"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.FrameSize}"/>
+                                    <Entry x:Name="FrameSizeEntry" 
+                                            Text="{Binding Motor.FrameSize}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="18"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Mounting}"/>
+
+                                    <Entry x:Name="MountingEntry" 
+                                            Text="{Binding Motor.Mounting}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="19"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Weight}"/>
+
+                                    <Entry x:Name="WeightEntry" 
+                                            Text="{Binding Motor.Mounting}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="20"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.SupplyData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.SupplyPanelName}"/>
+
+                                    <Entry x:Name="SupplyPanelEntry" 
+                                            Text="{Binding Motor.SupplyPanel}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="21"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.SupplyPanelLocation}"/>
+
+                                    <Entry x:Name="SupplyPanelLocationEntry" 
+                                            Text="{Binding Motor.supplyPanelLoc}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            TabIndex="22"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.ExtraData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Frame>
+                            <StackLayout>
+                                <Editor    x:Name="ExtraDataEditor" 
+                                            Text="{Binding Motor.ExtraData}" 
+                                            TextChanged="Editor_TextChanged"
+                                            IsEnabled= "{Binding IsEnabled}" 
+                                            
+                                            TabIndex="23"/>
+                            </StackLayout>
+                        </Frame>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.SpareParts}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                    <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.InventorySelect}"/>
+                                        <FlexLayout >
+                                            <autocomplete:SfAutoComplete   
+                                                FlexLayout.Grow="80" 
+                                                x:Name="InventoryAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                           SuggestionBoxPlacement="Bottom"                       
+                                            DataSource="{Binding InventoryList}"
+                                            ItemsSource="{Binding InventoryList}"
+                                            DisplayMemberPath="code"
+                                             IsEnabled="{Binding IsEnabled}"
+                                             >
+                                                <autocomplete:SfAutoComplete.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding code}" VerticalOptions="Center"  TextColor="{x:StaticResource TextBlack}" />
+                                                        <Label Text="{Binding description1}" VerticalOptions="Center"   TextColor="{x:StaticResource TextBlack}"/>
+                                                        </StackLayout>
+                                                    </DataTemplate>
+                                                </autocomplete:SfAutoComplete.ItemTemplate>
+                                            </autocomplete:SfAutoComplete>
+                                        <Button FlexLayout.Grow="20"  Text="{x:Static resource:Resources.Set}" Clicked="Button_Clicked" FontAttributes="Bold" Margin="10,0,0,0" />
+                                        </FlexLayout>
+                                    </StackLayout>
+                            </Frame>
+                            <sync:SfListView ItemsSource="{Binding Motor.SpareParts}" 
+                          x:Name="listView" 
+                         HoldCommand="{Binding ListViewHoldingCommand}"                    
+                          AutoFitMode="DynamicHeight"
+                                             IsEnabled="{Binding IsEnabled}">
+
+                            <sync:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame>
+                                            <Grid >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                    <Frame>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label    Text="{x:Static resource:Resources.Code}"/>
+                                                            <Label    Text="{Binding InventoryCode}" FontAttributes="Italic" VerticalOptions="End"/>
+                                                        </StackLayout>
+                                                    </Frame>
+                                                    <Frame Grid.Row="2" >
+                                                    <StackLayout Orientation="Horizontal" >
+                                                            <Label    Text="{x:Static resource:Resources.Description1}"/>
+                                                        <Label    Text="{Binding Description1}" FontAttributes="Italic" VerticalOptions="End"/>
+                                                    </StackLayout>
+                                                    </Frame>
+                                                    <Frame  Grid.Row="3" >
+                                                    <StackLayout Orientation="Horizontal">
+                                                            <Label    Text="{x:Static resource:Resources.Description2}"/>
+                                                        <Label    Text="{Binding Description2}" FontAttributes="Italic" VerticalOptions="End"/>
+                                                    </StackLayout>
+                                                    </Frame>
+                                                    <Frame Grid.Row="1" Grid.Column="0" VerticalOptions="End">
+                                                    <StackLayout Orientation="Horizontal"  >
+                                                            <Label    Text="{x:Static resource:Resources.Quantity}"/>
+                                                        <Label    Text="{Binding QtyRequired}" FontAttributes="Italic" VerticalOptions="End"/>
+                                                    </StackLayout>
+                                                    </Frame>
+                                                </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </sync:SfListView.ItemTemplate>
+                            <sync:SfListView.DataSource>
+                                <data:DataSource>
+                                    <data:DataSource.SortDescriptors>
+                                            <data:SortDescriptor PropertyName="InventoryCode" Direction="Ascending"/>
+                                    </data:DataSource.SortDescriptors>
+                                </data:DataSource>
+                            </sync:SfListView.DataSource>
+                        </sync:SfListView>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

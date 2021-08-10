@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--external-files-path name="Equipment" path="/QuipData/Equipment/" /-->
+    <!--external-files-path name="Inventory" path="/QuipData/Inventory"/ -->
+  <!--cache-path name="name" path="path" /-->
+
+     <external-files-path name="my_images" path="Pictures" />
+     <external-files-path name="my_movies" path="Movies" />
+
+</paths>

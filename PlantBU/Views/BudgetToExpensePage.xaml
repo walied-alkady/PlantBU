@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:PlantBU.ViewModels"
+             x:Class="PlantBU.Views.BudgetToExpensePage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+             Title="{x:Static resource:Resources.BudgetAnalysis}">
+    <ContentPage.BindingContext>
+        <local:BudgetToExpenseViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <chart:ChartColorCollection x:Key="Colors">
+                <Color>Red</Color>
+                <Color>Green</Color>
+            </chart:ChartColorCollection>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <chart:SfChart.BindingContext>
+            <local:BudgetToExpenseViewModel/>
+        </chart:SfChart.BindingContext>
+
+        <chart:SfChart.Legend>
+            <chart:ChartLegend />
+        </chart:SfChart.Legend>
+
+        <chart:SfChart.Title>
+            <chart:ChartTitle>
+                <chart:ChartTitle.Text>
+                    <MultiBinding StringFormat="{}{0} {1}{2} , {4} {5}{6}">
+                        <Binding   Source="{x:Static resource:Resources.Total}"/>
+                        <Binding   Source="{x:Static resource:Resources.Budget}"/>
+                        <Binding   Source="{x:Static resource:Resources.EGP}"/>
+                        <Binding   Source="{x:Static resource:Resources.Total}"/>
+                        <Binding   Source="{x:Static resource:Resources.Expenses}"/>
+                        <Binding   Source="{x:Static resource:Resources.EGP}"/>
+                    </MultiBinding>
+                </chart:ChartTitle.Text>
+            </chart:ChartTitle>
+        </chart:SfChart.Title>
+
+        <chart:SfChart.PrimaryAxis>
+            <chart:CategoryAxis>
+                <chart:CategoryAxis.Title>
+                    <chart:ChartAxisTitle Text="{x:Static resource:Resources.Month}"/>
+                </chart:CategoryAxis.Title>
+            </chart:CategoryAxis>
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis>
+                <chart:NumericalAxis.Title>
+                    <chart:ChartAxisTitle>
+                        <chart:ChartAxisTitle.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Source="{x:Static resource:Resources.Value}" />
+                                <Binding Source="{x:Static resource:Resources.EGP}" />
+                            </MultiBinding>
+                        </chart:ChartAxisTitle.Text>
+                    </chart:ChartAxisTitle>
+                </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series>
+            <chart:ColumnSeries ItemsSource ="{Binding Data}" Label="{x:Static resource:Resources.Budget}" XBindingPath="Month" YBindingPath="BudgetValue" EnableTooltip="True"/>
+            <chart:ColumnSeries ItemsSource ="{Binding Data}" Label="{x:Static resource:Resources.Expense}" XBindingPath="Month" YBindingPath="ExpenseValue" EnableTooltip="True"/>
+        </chart:SfChart.Series>
+    </chart:SfChart>
+</ContentPage>

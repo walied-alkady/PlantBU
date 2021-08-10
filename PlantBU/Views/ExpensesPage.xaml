@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable" 
+             xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"
+             x:Class="PlantBU.Views.ExpensesPage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+             Title="{x:Static resource:Resources.Expenses}">
+    <ContentPage.BindingContext>
+        <local:ExpensesViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Add" Text="{x:Static resource:Resources.Add}" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar          x:Name="searchBar" TextChanged="OnFilterTextChanged"  TextColor="Black" />
+            <progressBar:SfLinearProgressBar x:Name="LinearProgressBar" 
+                                             TrackHeight="20" 
+                                             CornerRadius="5"
+                                             Progress="{Binding BarPercent}"
+                                             IsVisible="{Binding IsbarVisible}"
+                                             Margin="5,10,5,5">
+                <progressBar:SfLinearProgressBar.RangeColors>
+
+                    <progressBar:RangeColorCollection>
+
+                        <progressBar:RangeColor IsGradient="True" Color="#f8babf" Start="0" End="25"/>
+
+                        <progressBar:RangeColor IsGradient="True" Color="#ee89a7" Start="25" End="50"/>
+
+                        <progressBar:RangeColor IsGradient="True" Color="#e4548c" Start="50" End="75"/>
+
+                        <progressBar:RangeColor IsGradient="True" Color="#db2575" Start="75" End="100"/>
+
+                    </progressBar:RangeColorCollection>
+
+                </progressBar:SfLinearProgressBar.RangeColors>
+            </progressBar:SfLinearProgressBar>
+            <Label Text="{x:Static resource:Resources.BudgetNotDefined}" FontAttributes="Bold" IsVisible="{Binding IsbarTextVisible}"   Padding="10,0,0,0" />
+            <Label Text="{x:Static resource:Resources.OverBudget}" FontAttributes="Bold" IsVisible="{Binding OverBudget}"   Padding="10,0,0,0" />
+            <ScrollView >
+                <sync:SfListView ItemsSource="{Binding Expenses}" 
+                                 x:Name="listView" 
+                                 HoldCommand="{Binding ListViewHoldingCommand}"                    
+                                 AutoFitMode="DynamicHeight"
+                                 IsScrollingEnabled="True"   
+                                 Padding="10,0,0,0">
+
+                    <sync:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame>
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label                   Text="{Binding Title}" LineBreakMode="TailTruncation"  />
+                                        <Label  Grid.Row="1"  Text="{Binding  Description}" LineBreakMode="TailTruncation" />
+                                        <Label  Grid.Column="1"  Text="{Binding  Value}"  />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </sync:SfListView.ItemTemplate>
+                    <sync:SfListView.DataSource>
+                        <data:DataSource>
+                            <data:DataSource.SortDescriptors>
+                                <data:SortDescriptor PropertyName="Value" Direction="Descending"/>
+                            </data:DataSource.SortDescriptors>
+                        </data:DataSource>
+                    </sync:SfListView.DataSource>
+                </sync:SfListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

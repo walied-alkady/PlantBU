@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+    xmlns:local="clr-namespace:PlantBU.ViewModels"
+    xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+    xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+    x:Class="PlantBU.Views.EquipmentPage"
+    xmlns:resource="clr-namespace:PlantBU.Properties"
+             Title="{x:Static resource:Resources.Equipment}">
+   
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="{Binding Equipment.Code}"  FontSize="Body" FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.BindingContext>
+        <local:EquipmentViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <x:Array Type="{x:Type x:String}" x:Key="MotorSearchPickerList" xmlns:sys="clr-namespace:System;assembly=mscorlib" >
+            <sys:String>Code</sys:String>
+            <sys:String>Description</sys:String>
+            <sys:String>Power</sys:String>
+            <sys:String>Speed</sys:String>
+
+        </x:Array>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems   >
+        
+        <ToolbarItem x:Name="EqLocation" Order="Secondary" Text="{x:Static resource:Resources.SetLocation}" Clicked="ToolbarItem_Clicked"   IsEnabled="{Binding IsEnabled}"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView >
+                <StackLayout >
+                    <syncfusion:SfExpander>
+                        <syncfusion:SfExpander.Header>
+                            <Grid HeightRequest="50">
+                            <Label Text="{x:Static resource:Resources.Data}"  VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                            </Grid>
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Data}"/>
+                                    <combobox:SfComboBox x:Name="LinecomboBox" 
+                                                         ValueChanged="Editor_TextChanged" 
+                                                         DataSource="{Binding LineList}"
+                                                         DisplayMemberPath="Code"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="1">
+                                        <combobox:SfComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Horizontal" >
+                                                    <Label Text="{Binding Code}" TextColor="{StaticResource TextBlack}" />
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </combobox:SfComboBox.ItemTemplate>
+                                    </combobox:SfComboBox>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Shop}"/>
+                                    <combobox:SfComboBox x:Name="ShopcomboBox" 
+                                                         ValueChanged="Editor_TextChanged" 
+                                                         DataSource="{Binding ShopList}"
+                                                         DisplayMemberPath="ShopName"
+                                                         IsEnabled= "{Binding IsEnabled}" 
+                                                         TabIndex="5">
+                                        <combobox:SfComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding ShopName}" TextColor="{StaticResource TextBlack}" />
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </combobox:SfComboBox.ItemTemplate>
+                                    </combobox:SfComboBox>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.ShopExtraData}"/>
+                                    <Entry  x:Name="ShopExtraEntry" 
+                                            Text="{Binding Equipment.ShopExtra}" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="6"
+                                            ReturnType="Next"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Data}"/>
+                                    <Entry  x:Name="CodeEntry" 
+                                            Text="{Binding Equipment.Code}" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="2"
+                                            ReturnType="Next"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Description}"/>
+                                    <Entry  x:Name="DescriptionEntry" 
+                                            Text="{Binding Equipment.Description}" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="3"
+                                            ReturnType="Next"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Type}"/>
+                                    <Entry  x:Name="TypeEntry" 
+                                            Text="{Binding Equipment.Type}" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="4"
+                                            ReturnType="Next"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Brand}"/>
+                                    <Entry  x:Name="BrandNameEntry" 
+                                            Text="{Binding Equipment.Brand}" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="7"
+                                            ReturnType="Next"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.BrandType}"/>
+                                    <Entry  x:Name="BrandTypeEntry" 
+                                            Text="{Binding Equipment.BrandType}" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="8"
+                                            ReturnType="Next"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.ExtraData}"/>
+                                    <Editor  x:Name="ExtraDataEntry" 
+                                            Text="{Binding Equipment.Extra}" 
+                                            AutoSize="TextChanges" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "{Binding IsEnabled}"                                                         
+                                            TabIndex="9"
+                                            />
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Latitude}"/>
+                                    <Editor  x:Name="LocationLatitudeEntry" 
+                                            Text="{Binding Equipment.LocationLatitude}" 
+                                            AutoSize="TextChanges" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "False"                                                         
+                                            TabIndex="9"
+                                            />
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Longitude}"/>
+                                    <Editor  x:Name="LocationLongitudeEntry" 
+                                            Text="{Binding Equipment.LocationLongitude}" 
+                                            AutoSize="TextChanges" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "False"                                                         
+                                            TabIndex="9"
+                                            />
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Altitude}"/>
+                                    <Editor  x:Name="LocationAltitudeEntry" 
+                                            Text="{Binding Equipment.LocationAltitude}" 
+                                            AutoSize="TextChanges" 
+                                            TextChanged="Editor_TextChanged" 
+                                            IsEnabled= "False"                                                         
+                                            TabIndex="9"
+                                            />
+                                </StackLayout>
+                            </Frame>
+                            
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander >
+                        <syncfusion:SfExpander.Header>
+                            <Grid HeightRequest="50">
+                            <Label Text="{x:Static resource:Resources.Motors}"  VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                            </Grid>
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                                <sync:SfListView x:Name="listViewMotors" 
+                                     ItemsSource="{Binding Motors}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                                         VerticalOptions="FillAndExpand" 
+                                                 AutoFitMode="DynamicHeight">
+                                    <sync:SfListView.ItemTemplate>
+                                        <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                    <Frame x:Name="frame" >
+                                                        <StackLayout>
+                                                     <Label  Text="{Binding Code}"/>
+                                                    <Label  Text="{Binding Description}" />
+                                                    <StackLayout Orientation="Horizontal">
+                                                                <Label Text="{Binding Power,StringFormat='\{0\} Kw'}" />
+                                                                <Label Text="{Binding RPM,StringFormat='\{0\} rpm'}"  />
+                                                                <Label Text="{Binding Brand}" />
+                                                            </StackLayout>
+                                                </StackLayout>
+                                                    </Frame>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                    </sync:SfListView.ItemTemplate>
+                                </sync:SfListView>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander >
+                        <syncfusion:SfExpander.Header>
+                            <Grid HeightRequest="50">
+                            <Label Text="{x:Static resource:Resources.Sensors}"  VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                            </Grid>
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                                <sync:SfListView x:Name="listViewSensors" 
+                                     ItemsSource="{Binding Sensors}"   
+                                      TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                                         VerticalOptions="FillAndExpand" 
+                                                 AutoFitMode="DynamicHeight">
+
+                                    <sync:SfListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <ViewCell.View>
+                                                        <Frame x:Name="frame" >
+                                                            <StackLayout>
+                                                    <Label Text="{Binding Code}"  />
+                                                    <Label Text="{Binding Description}" />
+                                                                    <StackLayout Orientation="Horizontal">
+                                                                        <Label   Text="{Binding InstrumentType}" />
+                                                                        <Label  Text="{Binding Brand}"  />
+                                                                    </StackLayout>
+                                                    
+                                                </StackLayout>
+                                                        </Frame>
+                                                </ViewCell.View>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </sync:SfListView.ItemTemplate>
+                                </sync:SfListView>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label Text="{x:Static resource:Resources.OtherComponents}"  VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                            <sync:SfListView x:Name="listViewComponents" 
+                                     ItemsSource="{Binding OtherComponent}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                                         VerticalOptions="FillAndExpand" AutoFitMode="DynamicHeight">
+
+                                <sync:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                    <Frame x:Name="frame" >
+                                                        <StackLayout>
+                                                                <Label Grid.Row="0"  Text="{Binding Code}"  />
+                                                                <Label Grid.Row="1"  Text="{Binding Description}" />
+                                                            </StackLayout>
+                                                    </Frame>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </sync:SfListView.ItemTemplate>
+                            </sync:SfListView>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <busyindicator:SfBusyIndicator x:Name="busyindicator" 
+                                       AnimationType="Gear" 
+                                       ViewBoxWidth = "150" 
+                                       ViewBoxHeight="150" 
+                                       Title="Loading..."
+                                       TitlePlacement="Bottom"
+                                       IsBusy="{Binding IsBusy}"/>
+                </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

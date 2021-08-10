@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ViewModels="clr-namespace:PlantBU.ViewModels"
+             xmlns:converters="clr-namespace:PlantBU.Utilities"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"             
+             x:Class="PlantBU.Views.SchedulesPage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+            Title="{x:Static resource:Resources.Schedules}">
+    <ContentPage.BindingContext>
+        <ViewModels:SchedulesViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Add" Text="{x:Static resource:Resources.Add}" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="SchedulePerformace" Text="{x:Static resource:Resources.SchedulePerformance}" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BoolToImageConverter x:Key="BoolToImageConverter"/>
+            <converters:GroupHeaderCountFinishedConverter x:Key="GroupHeaderCountFinishedConverter"/>
+            <converters:GroupHeaderPercentConverter x:Key="GroupHeaderPercentConverter"/>
+            <converters:EmployeeCodeToEmployeeFirstNameConverter x:Key="EmployeeCodeToEmployeeFirstNameConverter"/>
+            <converters:EmployeeCodeToEmployeeLastNameConverter x:Key="EmployeeCodeToEmployeeLastNameConverter"/>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="searchBar" TextChanged="OnFilterTextChanged"  TextColor="Black"/>
+            <sync:SfListView ItemsSource="{Binding Schedules}" 
+                          x:Name="listView" 
+                          TapCommand="{Binding ListViewTappedCommand}"    
+                          HoldCommand="{Binding ListViewHoldingCommand}" 
+                            Loaded="listView_Loaded"
+                           IsStickyGroupHeader ="True"
+                           AllowGroupExpandCollapse ="True"
+                          AutoFitMode="DynamicHeight" 
+                          
+                          IsScrollingEnabled="True">
+                <sync:SfListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource Secondary}" HeightRequest="45"  >
+                            <Label Text="Total Schedules:" FontAttributes="Bold" Margin="10,10,0,0"/>
+                            <Label Text="{Binding  SchedulesCount,StringFormat='{0}'}" FontAttributes="Bold" Margin="10,10,0,0">
+                                <Label.BindingContext>
+                                    <ViewModels:SchedulesViewModel/>
+                                </Label.BindingContext>
+                            </Label>
+                            <Label Text="{Binding  SchedulesPercent,StringFormat='(Progress : {0}%)'}" FontAttributes="Bold" Margin="10,10,0,0">
+                                <Label.BindingContext>
+                                    <ViewModels:SchedulesViewModel/>
+                                </Label.BindingContext>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </sync:SfListView.HeaderTemplate>
+                <sync:SfListView.GroupHeaderTemplate>
+                    <DataTemplate x:Name="GroupHeaderTemplate">
+                        <Frame BackgroundColor="{StaticResource Secondary}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  VerticalOptions="Center" >
+                                <Image Source="{Binding IsExpand,  Converter={StaticResource BoolToImageConverter}}" HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="{Binding Key}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Count,StringFormat= ' {0}' }" FontAttributes="Bold" />
+                                <Label Text="{Binding Key,Converter={StaticResource GroupHeaderCountFinishedConverter},StringFormat= ' ({0} Done'}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Key,Converter={StaticResource GroupHeaderPercentConverter},StringFormat= '{0} %)'}" FontAttributes="Bold"/>
+
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </sync:SfListView.GroupHeaderTemplate>
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Frame >
+                                <Grid RowSpacing="0" ColumnSpacing="5" HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Label    Text="{Binding ItemCode}" FontAttributes="Bold" LineBreakMode="NoWrap" />
+                                        <Label    Text="{Binding  ItemDescription}" LineBreakMode="MiddleTruncation" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Orientation="Horizontal"  x:Name="Datelay">
+                                        <Label    Text="{Binding  DateScheduleFrom, StringFormat='{0:MMMM dd, yyyy}'}" FontAttributes="Italic" LineBreakMode="NoWrap" />
+                                        <Label    Text="{Binding DateScheduleTo, StringFormat='{0:MMMM dd, yyyy}'}" FontAttributes="Italic" LineBreakMode="NoWrap" />
+                                        
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="2" Orientation="Horizontal"  x:Name="repairlay" HorizontalOptions="FillAndExpand">
+                                        <Label    Text="{Binding Repair}" FontAttributes="Italic" LineBreakMode="NoWrap"/>
+                                        <Label    Text="{Binding SpareParts.Count,StringFormat='{} ({0}) '}" FontAttributes="Italic" LineBreakMode="NoWrap"/>
+                                        
+                                      
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="3" Orientation="Horizontal">
+                                        <Label    Text="{Binding AssigneeCompanyCode , Converter={StaticResource EmployeeCodeToEmployeeFirstNameConverter}}" LineBreakMode="NoWrap"/>
+                                        <Label    Text="{Binding AssigneeCompanyCode , Converter={StaticResource EmployeeCodeToEmployeeLastNameConverter}}" LineBreakMode="TailTruncation"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="3" Orientation="Horizontal">
+                                        <Label    Text="{Binding AssigneeDoneCompanyCode , Converter={StaticResource EmployeeCodeToEmployeeFirstNameConverter}}" LineBreakMode="NoWrap"/>
+                                        <Label    Text="{Binding AssigneeDoneCompanyCode , Converter={StaticResource EmployeeCodeToEmployeeLastNameConverter}}" LineBreakMode="TailTruncation"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" Grid.RowSpan="3"  HorizontalOptions="Fill" VerticalOptions="End">
+                                        <syncfusion:SfSwitch x:Name="statswitch" IsOn="{Binding StatusSchedule, Mode=TwoWay}" VerticalOptions="End"/>
+                                        <Label HorizontalOptions="End" LineBreakMode="NoWrap" VerticalOptions="End">
+                                            <Label.Text>
+                                                <Binding  Source="{x:Reference statswitch}" Path="IsOn">
+                                                    <Binding.Converter>
+                                                        <converters:BoolGenericConverter x:TypeArguments="x:String" TrueObject="{x:Static resource:Resources.Done}"  FalseObject="{x:Static resource:Resources.Pending}" />
+                                                    </Binding.Converter>
+                                                </Binding>
+                                            </Label.Text>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+                <sync:SfListView.DataSource>
+                    
+                    <data:DataSource>
+                        <data:DataSource.GroupDescriptors>
+                            <data:GroupDescriptor PropertyName="Area"  />
+                        </data:DataSource.GroupDescriptors>
+                        <data:DataSource.SortDescriptors>
+                            <data:SortDescriptor PropertyName="DateScheduleFrom" Direction="Descending"/>
+                        </data:DataSource.SortDescriptors>
+                    </data:DataSource>
+                </sync:SfListView.DataSource>
+            </sync:SfListView>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator" 
+                                       AnimationType="Gear" 
+                                       Title="Loading..."
+                                       TextColor="Black"        
+                                       TitlePlacement="Bottom"
+                                       IsBusy= "{Binding IsBusy}"
+                                       VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,27 @@
+console.log("Starting function");
+// add your initialization code here
+ 
+exports = function(changeEvent) {
+    // event handler code goes here
+ 
+    console.log("Changes in realm at:", changeEvent.path);
+ 
+    var realm = changeEvent.realm;
+     
+    for (var className in changeEvent.changes) {
+        var changes = changeEvent.changes[className];
+        var objects = realm.objects(className);
+         
+        console.log("Changes in Model:", className);
+        for (let pos of changes.insertions) {
+            console.log("- object inserted at position ", pos, " : ", objects[pos]);
+        }
+        for (let pos of changes.modifications) {
+            console.log("- object modified at position ", pos, " : ", objects[pos]);
+        }
+        for (let pos of changes.deletions) {
+            console.log("- object deleted at position ", pos);
+        }
+    }
+    console.log("");
+};

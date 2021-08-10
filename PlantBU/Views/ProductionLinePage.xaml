@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlantBU.Views.ProductionLinePage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+            Title="{x:Static resource:Resources.ProductionLine}">
+   
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                    <StackLayout>
+                    <Label Text="{x:Static resource:Resources.Code}" />
+                        <Editor    x:Name="CodeEditor" 
+                                   TextChanged="CodeEditor_TextChanged"
+                                   HorizontalOptions="FillAndExpand"/>
+
+                    </StackLayout>
+                </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="{x:Static resource:Resources.Description}"/>
+                <Editor    x:Name="DescriptionEditor" 
+                                            TextChanged="CodeEditor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            </Frame>
+            <Frame>
+            <StackLayout>
+                    <Label Text="{x:Static resource:Resources.LineNo}" />
+                <Editor    x:Name="LineNoEditor" 
+                                            TextChanged="CodeEditor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            </Frame>
+            <Frame>
+            <StackLayout >
+                    <Label Text="{x:Static resource:Resources.ExtraData}"/>
+                <Editor    x:Name="ExtraDataEditor" 
+                                            TextChanged="CodeEditor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

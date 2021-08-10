@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+             xmlns:local1="clr-namespace:PlantBU.Utilities"
+             x:Class="PlantBU.Views.EquipmentsPage"
+             x:Name="EquipsPagRef"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+             Title="{x:Static resource:Resources.Equipments}">
+    
+    <ContentPage.ToolbarItems BackgroundColor="{StaticResource Primary}">
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local1:BoolToImageConverter x:Key="BoolToImageConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <local:EquipmentsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar   x:Name="searchBar" TextChanged="OnFilterTextChanged" TextColor="Black"/>
+            <sync:SfListView x:Name="listView"
+                                     ItemsSource="{Binding Equipments}"
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                     Loaded="listView_Loaded"
+                                     GroupExpanding="listView_GroupExpanding"
+                                     IsStickyGroupHeader ="True"
+                                     AllowGroupExpandCollapse ="True"
+                                     AutoFitMode="DynamicHeight">
+                <sync:SfListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="{StaticResource Secondary}" HeightRequest="45"  >
+                            <Label Text="{Binding EquipmentsCount,StringFormat='Total {0}'}" FontAttributes="Bold" Margin="10,10,0,0">
+                                <Label.BindingContext>
+                                    <local:EquipmentsViewModel />
+                                </Label.BindingContext>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </sync:SfListView.HeaderTemplate>
+                <sync:SfListView.GroupHeaderTemplate>
+                    <DataTemplate x:Name="GroupHeaderTemplate">
+                        <Frame BackgroundColor="{StaticResource Secondary}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  VerticalOptions="Center" >
+                                <Image Source="{Binding IsExpand,  Converter={StaticResource BoolToImageConverter}}" HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="{Binding Key}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Count,StringFormat= '( {0} )' }" FontAttributes="Bold" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </sync:SfListView.GroupHeaderTemplate>
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid Padding="2" Margin="1" >
+                                        <Frame x:Name="frame" >
+                                            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid x:Name="grid">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid RowSpacing="2">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Grid.Row="0" Grid.Column="0"  Padding="10,0,0,0" VerticalOptions="CenterAndExpand">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                            <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" LineBreakMode="NoWrap"   Text="{Binding Code}"/>
+                                                        <Label Grid.Row="1" LineBreakMode="TailTruncation"   Text="{Binding Description}"/>
+                                                    </Grid>
+                                                </Grid>
+                                                    
+                                                </Grid>
+
+                                        </Grid>
+                                        </Frame>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+                <sync:SfListView.DataSource>
+                    <data:DataSource>
+                        <data:DataSource.GroupDescriptors>
+                            <data:GroupDescriptor PropertyName="Shop"  />
+                        </data:DataSource.GroupDescriptors>
+                        <data:DataSource.SortDescriptors>
+                            <data:SortDescriptor PropertyName="Code" Direction="Ascending"/>
+                        </data:DataSource.SortDescriptors>
+                    </data:DataSource>
+                </sync:SfListView.DataSource>
+            </sync:SfListView>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator" 
+                                       AnimationType="Gear" 
+                                       Title="Loading..."
+                                       TextColor="Black"        
+                                       TitlePlacement="Bottom"
+                                       IsBusy= "{Binding IsBusy}"
+                                       VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

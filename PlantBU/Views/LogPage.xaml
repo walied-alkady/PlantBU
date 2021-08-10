@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" 
+             xmlns:syncfusion2="clr-namespace:Syncfusion.SfDataGrid.XForms.Renderers;assembly=Syncfusion.SfDataGrid.XForms" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             x:Class="PlantBU.Views.LogPage"
+             x:Name="page"
+             xmlns:resource="clr-namespace:PlantBU.Properties" xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title="{x:Static resource:Resources.Log}">
+    <ContentPage.BindingContext>
+        <local:LogViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout >
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Code}" />
+                        <autocomplete:SfAutoComplete   
+                                            x:Name="SheduleItemAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                            SuggestionBoxPlacement="Bottom"                       
+                                            DataSource="{Binding ScheduleItems}"
+                                            ItemsSource="{Binding ScheduleItems}"
+                                            DisplayMemberPath="Code" 
+                                            HorizontalOptions="FillAndExpand"
+                                            SelectionChanged="AutoComplete_SelectionChanged" >
+
+                            <autocomplete:SfAutoComplete.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Code}" VerticalOptions="Center" TextColor="{StaticResource TextBlack}" />
+                                        <Label Text="{Binding Description}" VerticalOptions="Center" TextColor="{StaticResource TextBlack}"   />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </autocomplete:SfAutoComplete.ItemTemplate>
+                        </autocomplete:SfAutoComplete>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Description}"/>
+                        <Editor    x:Name="SheduleItemDescriptionEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Repair}"/>
+                        <autocomplete:SfAutoComplete   x:Name="RepairAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                           SuggestionBoxPlacement="Bottom"                       
+                                            DataSource="{Binding repairs}"
+                                            HorizontalOptions="FillAndExpand"
+                                            ValueChanged="RepairAutoComplete_ValueChanged"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Cost}"/>
+                        <Editor    x:Name="CostEditor" 
+                                           TextChanged="Editor_TextChanged"
+                                           HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.RepairDetails}"/>
+                        <Editor    x:Name="RepairDetailsEditor" 
+                                           TextChanged="Editor_TextChanged"
+                                           HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Date}"/>
+                        <syncfusion2:SfDatePicker x:Name="datefromPicker" 
+                                                  MinimumDate="1/1/2020"
+                                          HorizontalOptions="FillAndExpand" 
+                                          DateSelected="datefromPicker_DateSelected"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout >
+                        <Label Text="{x:Static resource:Resources.ExtraData}"/>
+                        <Editor    x:Name="ExtraDataEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout >
+                        <Label Text="{x:Static resource:Resources.Assignee}"/>
+                        <combobox:SfComboBox x:Name="AssigneecomboBox" 
+                                                         SelectionChanged="ComboBox_SelectionChanged"  
+                                                         DataSource="{Binding Assignees}"
+                                                         ItemsSource="{Binding Assignees}"
+                                                         SelectedItem="{Binding Log.AssigneeCompanyCode}"
+                                                         DisplayMemberPath="FullNameAr"
+                                                         TextColor="Black"
+                                                         TabIndex="5">
+                            <combobox:SfComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Margin="10,10,0,0">
+                                        <Label Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" TextColor="{StaticResource TextBlack}" Margin="10,0,0,0"/>
+                                        <Label Text="{Binding LastName}" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource TextBlack}" Margin="10,0,0,0"/>
+                                    </StackLayout>
+
+                                </DataTemplate>
+                            </combobox:SfComboBox.ItemTemplate>
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

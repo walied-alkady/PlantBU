@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<backdrop:SfBackdropPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:backdrop="clr-namespace:Syncfusion.XForms.Backdrop;assembly=Syncfusion.SfBackdrop.XForms" 
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+    xmlns:local="clr-namespace:PlantBU.ViewModels"
+    xmlns:local1="clr-namespace:PlantBU.Utilities;assembly=PlantBU"
+    xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+    xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
+    x:Class="PlantBU.Views.MainPage"
+    BackLayerRevealOption="Auto"
+    xmlns:resource="clr-namespace:PlantBU.Properties"
+    Title="{x:Static resource:Resources.MainPageTitle}">
+    <ContentPage.ToolbarItems BackgroundColor="{StaticResource Primary}">
+        <ToolbarItem x:Name="Lang" Order="Primary" Clicked="ToolbarItem_Clicked"  />
+        <ToolbarItem x:Name="LogOut" Text="{x:Static resource:Resources.LogOut}"  Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="ForgetUser" Text="{x:Static resource:Resources.ForgetUser}"  Order="Secondary" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <local:ZeroValueConverter x:Key="ZeroValueConverter"/>
+    </ContentPage.Resources>
+    <backdrop:SfBackdropPage.BackLayer>
+        <backdrop:BackdropBackLayer>
+            <StackLayout >
+                <sync:SfListView ItemsSource="{Binding MenuItems}" 
+                                  x:Name="listView" 
+                                 TapCommand="{Binding ListViewTappedCommand}"
+                                 IsEnabled="{Binding IsEnabled}" 
+                                 IsScrollingEnabled="True"  
+                                 SelectionMode="None"
+                                 AutoFitMode="DynamicHeight">
+                    <sync:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame x:Name="frame" BackgroundColor="{StaticResource Secondary}">
+                                    <badge:SfBadgeView  BadgeText="{Binding Count, Converter={StaticResource ZeroValueConverter}}"  VerticalOptions="Center" >
+                                        <ContentView>
+
+                                            <Label Text="{Binding Category}" 
+                                                       FontSize="Small" 
+                                                       FontAttributes="Bold" 
+                                                       VerticalOptions="CenterAndExpand" />
+                                        </ContentView>
+                                        <badge:SfBadgeView.BadgeSettings>
+                                            <badge:BadgeSetting BadgeType="Info"  
+                                                                    BackgroundColor="{Binding Color}" 
+                                                                    CornerRadius="10" 
+                                                                    BadgeAnimation="Scale" 
+                                                                    BadgePosition="TopRight"
+                                                                    Offset="0, -10"
+                                                                    BadgeAlignment="End" />
+                                        </badge:SfBadgeView.BadgeSettings>
+                                    </badge:SfBadgeView>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </sync:SfListView.ItemTemplate>
+                </sync:SfListView>
+            </StackLayout>
+        </backdrop:BackdropBackLayer>
+    </backdrop:SfBackdropPage.BackLayer>
+    <backdrop:SfBackdropPage.FrontLayer>
+        <backdrop:BackdropFrontLayer >
+                <RelativeLayout >
+                <Image Source="{local1:ImageResource PlantBU.Images.PlantNight.jpg}" Opacity="0.3" Aspect="AspectFill"
+                        RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                        RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+                <StackLayout 
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+                        
+                    <Label Text="{x:Static resource:Resources.Welcome}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Subtitle" />
+                    <StackLayout Padding="10,5,0,0">
+                        <combobox:SfComboBox x:Name="UsercomboBox" 
+                                         IsEditableMode="False"  
+                                         ItemsSource="{Binding employees}" 
+                                         DataSource="{Binding employees}" 
+                                         DisplayMemberPath="LastName"
+                                         HorizontalOptions="FillAndExpand" 
+                                         IsVisible="{Binding IsLoginView}"
+                                        SelectionChanged="UsercomboBox_SelectionChanged" BackgroundColor="White" TextColor="Black">
+                            <combobox:SfComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Margin="10,10,0,0">
+                                        <Label Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" TextColor="{StaticResource TextBlack}" Margin="10,0,0,0"/>
+                                        <Label Text="{Binding LastName}" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource TextBlack}"/>
+                                    </StackLayout>
+
+                                </DataTemplate>
+                            </combobox:SfComboBox.ItemTemplate>
+                        </combobox:SfComboBox>
+                        <Entry   x:Name="UserPasswordEntry" IsVisible="{Binding IsLoginView}" IsPassword="True" HorizontalOptions="FillAndExpand"
+                                     TextChanged="UserPasswordEntry_TextChanged" BackgroundColor="White" TextColor="Black"/>
+                        <Button x:Name="LogIn" Text="{x:Static resource:Resources.LogIn}" IsVisible="{Binding IsLoginView}" Clicked="LogIn_Clicked" IsEnabled="{Binding IsLoginEnabled}" 
+                                BackgroundColor="DodgerBlue"/>
+                    </StackLayout>
+                    <busyindicator:SfBusyIndicator x:Name="busyindicator" 
+                                                   AnimationType="Cupertino" 
+                                                   IsBusy="{Binding IsBusy}" 
+                                                   Title="{Binding IsBusyTitle}"
+                                                   TextColor="{StaticResource Text}"/>
+                    <progressBar:SfCircularProgressBar x:Name="CircularProgressBar"  
+                                                   StartAngle="0" 
+                                                   EndAngle="360"  
+                                                   VerticalOptions="FillAndExpand" 
+                                                   HorizontalOptions="FillAndExpand">
+                        <progressBar:SfCircularProgressBar.Content>
+                            <Grid>
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="3*"/>
+
+                                    <RowDefinition Height="*"/>
+
+                                </Grid.RowDefinitions>
+                                <Label Text="{x:Static resource:Resources.Loading}" FontAttributes="Bold"   FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                                <Label x:Name="CustomContentProgressBarLabel" Grid.Row="1" FontAttributes="Bold"  FontSize="20"     HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                            </Grid>
+
+                        </progressBar:SfCircularProgressBar.Content>
+                    </progressBar:SfCircularProgressBar>
+                    <Label Text="{Binding SessionState}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Caption" />
+                    <Label Text="{Binding LoggedUser}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Caption" />
+                    </StackLayout>
+                </RelativeLayout>
+            
+        </backdrop:BackdropFrontLayer>
+    </backdrop:SfBackdropPage.FrontLayer>
+</backdrop:SfBackdropPage>

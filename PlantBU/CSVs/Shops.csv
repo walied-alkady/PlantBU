@@ -1,0 +1,21 @@
+Id,Partition,ShopName,ShopDescription
+,Public,Crusher,Lime stone crusher
+,Public,RMIX,Raw Mix
+,Public,RMA,Raw Mill A
+,Public,RMB,Raw Mill B
+,Public,RMC,Raw Mill C
+,Public,EP Filter,EP Filter
+,Public,Homo,Homo Silo 
+,Public,Kiln1,Kiln 1
+,Public,Coal1,Coal Mill 1
+,Public,Cooler1,Cooler 1
+,Public,Utilities1,Utilities
+,Public,Kiln2,Kiln 2
+,Public,Coal2,Coal Mill 2
+,Public,Cooler2,Cooler 2
+,Public,Utilities2,Utilities 2
+,Public,CMA,Cement Mill A
+,Public,CMB,Cement Mill B
+,Public,CMC,Cement Mill C
+,Public,Packing,Packing
+,Public,Other,Other Areas

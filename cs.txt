@@ -1,0 +1,58 @@
+using PlantBU.DataModel;
+using PlantBU.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace PlantBU.Views
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class EquipmentsPage : ContentPage
+    {
+        public EquipmentsPage()
+        {
+            InitializeComponent();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            (BindingContext as EquipmentsViewModel).RefreshItems();
+            (BindingContext as EquipmentsViewModel).Navigation = Navigation;
+            //listView.CollapseAll();
+        }
+        private async void OnDelete(object sender, EventArgs e)
+        {
+            Equipment selected = (Equipment)((Button)sender).BindingContext;
+            var result = await DisplayAlert("Confirmation", "Are You Sure?", "Ok", "Cancel"); // since we are using async, we should specify the DisplayAlert as awaiting.
+            if (result == true) // if it's equal to Ok
+            {
+                DBManager.realm.Write(() =>
+                {
+                    DBManager.realm.Remove(selected);
+                    (this.BindingContext as EquipmentsViewModel).RefreshItems();
+                });
+            }
+            else // if it's equal to Cancel
+            {
+                return; // just return to the page and do nothing.
+            }
+        }
+        private void OnEdit(object sender, EventArgs e)
+        {
+
+            var selected = ((Button)sender).BindingContext;
+            Page pg = new EquipmentPage((selected as Equipment));
+            Application.Current.MainPage?.Navigation.PushModalAsync(pg, animated: true);
+
+        }
+        private void OnToolbarItemClicked(object sender, EventArgs e)
+        {
+            // Application.Current.MainPage?.Navigation.PushModalAsync(new EquipmentEditPage(), animated: true);
+        }
+    }
+}

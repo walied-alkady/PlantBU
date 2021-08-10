@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             x:Class="PlantBU.Views.ShopPage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+            Title="{x:Static resource:Resources.Shop}">
+   
+    <ContentPage.Content>
+        <StackLayout>
+                <Frame>
+                    <StackLayout>
+                    <Label Text="{x:Static resource:Resources.Name}" />
+                        <Editor    x:Name="CodeEditor" 
+                                            TextChanged="Editor_TextChanged" 
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                <StackLayout Orientation="Horizontal"  Padding="5">
+                    <Label Text="{x:Static resource:Resources.Description}"/>
+                        <Editor    x:Name="DescriptionEditor" 
+                                                TextChanged="Editor_TextChanged" 
+                                                HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

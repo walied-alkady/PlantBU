@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion2="clr-namespace:Syncfusion.SfDataGrid.XForms.Renderers;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             x:Class="PlantBU.Views.SafetyReportPage"
+             x:Name="page"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title="{x:Static resource:Resources.SafetyReport}">
+    <ContentPage.BindingContext>
+        <local:SafetyReportViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems BackgroundColor="{StaticResource Primary}">
+        <ToolbarItem x:Name="SendMail" Text="{x:Static resource:Resources.Email}" Order="Secondary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  Padding="5" >
+                <Frame>
+                    <StackLayout>
+                    <StackLayout Orientation="Horizontal" >
+                        <Button x:Name="LoadPhotobtn" Text="Load Photo" Clicked="Photobtn_Clicked" HorizontalOptions="FillAndExpand" WidthRequest="100"/>
+                        <Button x:Name="TakePhotobtn" Text="Take Photo" Clicked="Photobtn_Clicked" HorizontalOptions="FillAndExpand"  WidthRequest="100"/>
+                        <Button x:Name="ClearPhotobtn" Text="Clear Photos" Clicked="Photobtn_Clicked" HorizontalOptions="FillAndExpand" WidthRequest="100"/>
+                    </StackLayout>
+                        <Label x:Name="PhotoNumsLabel" Text="{Binding PhotosNum,StringFormat= ( {0} ) Photos}" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <syncfusion2:SfDatePicker x:Name="IssuedatePicker" 
+                                          HorizontalOptions="FillAndExpand" 
+                                              MinimumDate="1/1/2020"
+                                          IsEnabled="False"    
+                                          DateSelected="Editor_TextChanged"/>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.SourceOfIssue}"/>
+                        <combobox:SfComboBox x:Name="SourceOfIssuecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         ComboBoxSource="{Binding SourceOfIssues}"
+                                                         SelectedItem="{Binding  SafetyReport.SourceOfIssue}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"  
+                                                         TabIndex="5"/>
+
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.IssueOnCompany}"/>
+                        <combobox:SfComboBox x:Name="IssueOnCompanycomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         ComboBoxSource="{Binding IssueOnCompanies}"
+                                                         SelectedItem="{Binding  SafetyReport.IssueOnCompany}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.IssueOnCompanyName}"/>
+                        <combobox:SfComboBox x:Name="IssueOnCompanyNamecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         ComboBoxSource="{Binding IssueOnCompanyNames}"
+                                                         SelectedItem="{Binding  SafetyReport.IssueOnCompanyName}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5">
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReporterDepartment}"/>
+                        <combobox:SfComboBox x:Name="ReporterDepartmentcomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         ComboBoxSource="{Binding Departments}"
+                                                         SelectedItem="{Binding  SafetyReport.ReporterDepartment}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReporterName}"/>
+                        <combobox:SfComboBox x:Name="ReporterNameComboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         ComboBoxSource="{Binding ElectricalEmployeesList}"
+                                                         SelectedItem="{Binding  SafetyReport.ReporterDepartment}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailsArea}"/>
+                        <combobox:SfComboBox x:Name="ReportDetailsAreacomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                        ComboBoxSource="{Binding Areas}"
+                                                         SelectedItem="{Binding  SafetyReport.ReportDetailsArea}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailsLine}"/>
+                        <combobox:SfComboBox x:Name="ReportDetailsLinecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         SelectedItem="{Binding  SafetyReport.ReportDetailsLine}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5">
+                            <combobox:SfComboBox.ComboBoxSource>
+                                <ListCollection:List x:TypeArguments="x:String">
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                </ListCollection:List>
+                            </combobox:SfComboBox.ComboBoxSource>
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailsObservation}"/>
+                        <Editor    x:Name="ReportDetailsObservationEditor" 
+                                    TextChanged="Editor_TextChanged"
+                                   TextTransform="Default"
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailsType}"/>
+                        <combobox:SfComboBox x:Name="TypecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                        ComboBoxSource="{Binding Types}"
+                                                         SelectedItem="{Binding  SafetyReport.ReportDetailsType}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5">
+                            
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailsViolationType}"/>
+                        <combobox:SfComboBox x:Name="ReportDetailsViolationTypecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                        ComboBoxSource="{Binding ViolationTypes}"
+                                                         SelectedItem="{Binding  SafetyReport.ReportDetailsViolationType}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5">
+                           
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailsRisk}"/>
+                        <combobox:SfComboBox x:Name="ReportDetailsRiskcomboBox" 
+                                                         ValueChanged="Editor_TextChanged"
+                                                         ComboBoxSource="{Binding RiskLevels}"
+                                                         SelectedItem="{Binding  SafetyReport.ReportDetailsRisk}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ReportDetailscorrectiveActions}"/>
+                        <Editor    x:Name="ReportDetailscorrectiveActionsEditor" 
+                                   TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ResponsibilityDepartment}"/>
+                        <combobox:SfComboBox x:Name="ResponsibilityDepartmentcomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                        ComboBoxSource="{Binding Departments}"
+                                                         SelectedItem="{Binding  SafetyReport.ResponsibilityDepartment}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5">
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ResponsibilityPerson}"/>
+                        <combobox:SfComboBox x:Name="ResponsibilityPersoncomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         SelectedItem="{Binding  SafetyReport.ResponsibilityPerson}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5">
+                            <combobox:SfComboBox.ComboBoxSource>
+                                <ListCollection:List x:TypeArguments="x:String">
+                                    <x:String>Hossam Taha</x:String>
+                                    <x:String>Hazem Hosny</x:String>
+                                    <x:String>Khaled Riad</x:String>
+                                    <x:String>Ahmed Elhosseiny</x:String>
+                                    <x:String>Walid Hassan</x:String>
+                                    <x:String>Mohamed Rabie</x:String>
+                                    <x:String>Ibrahim Hassanein</x:String>
+                                    <x:String>Mehrez Meabed</x:String>
+                                    <x:String>Ahmed Youssef</x:String>
+                                    <x:String>Alaa Farag</x:String>
+                                    <x:String>Mohamed Shawky</x:String>
+                                    <x:String>Amr Yassin</x:String>
+                                    <x:String>Ahmed Abdel Salam</x:String>
+                                    <x:String>Ahmed Raouf</x:String>
+                                    <x:String>Mohamed Meatemed</x:String>
+                                    <x:String>Mohamed Medhat</x:String>
+                                    <x:String>Sherif Tarek</x:String>
+                                    <x:String>Assem Taha</x:String>
+                                    <x:String>Nabil Fathy</x:String>
+                                    <x:String>Nasser Kamal</x:String>
+                                    <x:String>Ahmed Shabaan</x:String>
+                                    <x:String>Islam Fahmy</x:String>
+                                    <x:String>Mohamed Magdy</x:String>
+                                    <x:String>Sherif Elhosseiny</x:String>
+                                    <x:String>Hassan Adel</x:String>
+                                    <x:String>Mahmoud Abdel Wahab</x:String>
+                                    <x:String>Mohamed Gomaa</x:String>
+                                    <x:String>Yasser Abdallah</x:String>
+                                    <x:String>Hany Ragab</x:String>
+                                    <x:String>Walid EL-Kady</x:String>
+                                    <x:String>Mohamed Abdel Naeem</x:String>
+                                    <x:String>Amr Saleh</x:String>
+                                    <x:String>Ahmed Taha</x:String>
+                                    <x:String>Mohamed Abdel Latif</x:String>
+                                    <x:String>Sherif Elgeddawy</x:String>
+                                    <x:String>Mahmoud Badr</x:String>
+                                    <x:String>Mohamed Abdel Aziz</x:String>
+                                    <x:String>Elamir Abdallah</x:String>
+                                    <x:String>Mohamed Kamal</x:String>
+                                    <x:String>Ahmed Abdel Aleem</x:String>
+                                    <x:String>Khaled Khorshid</x:String>
+                                    <x:String>Khayree Mazhar</x:String>
+                                    <x:String>Ahmed Ghidan</x:String>
+                                </ListCollection:List>
+                            </combobox:SfComboBox.ComboBoxSource>
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.DueDate}"/>
+                        <syncfusion2:SfDatePicker x:Name="DueDatePicker" 
+                                          HorizontalOptions="FillAndExpand" 
+                                          MinimumDate="1/1/2020"
+                                          DateSelected="Editor_TextChanged"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.CloseDate}"/>
+                        <syncfusion2:SfDatePicker x:Name="CloseDatePicker" 
+                                                  MinimumDate="1/1/2020"
+                                          HorizontalOptions="FillAndExpand" 
+                                          DateSelected="Editor_TextChanged"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Status}"/>
+                        <Editor    x:Name="StatusEditor" 
+                                   Text="OPEN"
+                                   TextChanged="Editor_TextChanged"
+                                   HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ViolationCompany}"/>
+                        <combobox:SfComboBox x:Name="ViolationCompanycomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                         ComboBoxSource="{Binding IssueOnCompanies}"
+                                                         SelectedItem="{Binding  SafetyReport.ViolationCompany}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ViolationDuring}"/>
+                        <combobox:SfComboBox x:Name="ViolationDuringcomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                                                                      ComboBoxSource="{Binding During}"
+
+                                                         SelectedItem="{Binding  SafetyReport.ViolationDuring}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ViolationCompanyName}"/>
+                        <combobox:SfComboBox x:Name="ViolationCompanyNamecomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                                        ComboBoxSource="{Binding IssueOnCompanyNames}"
+                                                         SelectedItem="{Binding  SafetyReport.ViolationCompanyName}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ViolationDepartment}"/>
+                        <combobox:SfComboBox x:Name="ViolationDepartmentcomboBox" 
+                                                         ValueChanged="Editor_TextChanged"  
+                                             ComboBoxSource="{Binding Departments}"
+                                                         SelectedItem="{Binding  SafetyReport.ViolationDepartment}"
+                                                         TextColor="Black"
+                                                         IsEnabled= "{Binding IsEnabled}"                                                         
+                                                         TabIndex="5"/>
+
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.ViolationName}"/>
+                        <Editor    x:Name="ViolationNameEditor" 
+                                   TextChanged="Editor_TextChanged"
+                                   HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

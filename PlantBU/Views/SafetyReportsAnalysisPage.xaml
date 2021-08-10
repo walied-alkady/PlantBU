@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlantBU.Views.SafetyReportsAnalysisPage"
+             xmlns:resource="clr-namespace:PlantBU.Properties" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels" 
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" 
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title="{x:Static resource:Resources.SafetyReport}">
+    <ContentPage.BindingContext>
+        <local:SafetyReportsAnalysisViewModel />
+    </ContentPage.BindingContext>
+    <chart:SfChart>
+
+        <chart:SfChart.PrimaryAxis>
+
+            <chart:CategoryAxis  >
+
+                <chart:CategoryAxis.Title>
+
+                    <chart:ChartAxisTitle Text="{x:Static resource:Resources.Employee}"/>
+
+                </chart:CategoryAxis.Title>
+
+            </chart:CategoryAxis>
+
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+
+            <chart:NumericalAxis>
+
+                <chart:NumericalAxis.Title>
+
+                    <chart:ChartAxisTitle>
+                        <chart:ChartAxisTitle.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Source="{x:Static resource:Resources.Report}" />
+                                <Binding Source="{x:Static resource:Resources.Number}" />
+                            </MultiBinding>
+                        </chart:ChartAxisTitle.Text>
+                    </chart:ChartAxisTitle>
+
+                </chart:NumericalAxis.Title>
+
+            </chart:NumericalAxis>
+
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series>
+
+            <chart:ColumnSeries ItemsSource="{Binding ChartData}" XBindingPath="Month" YBindingPath="ReportsCount">
+                <chart:ColumnSeries.DataMarker>
+
+                    <chart:ChartDataMarker/>
+
+                </chart:ColumnSeries.DataMarker>
+            </chart:ColumnSeries>
+
+        </chart:SfChart.Series>
+        <chart:SfChart.ChartBehaviors>
+
+            <chart:ChartZoomPanBehavior ZoomMode="X" EnableDoubleTap="True"/>
+
+        </chart:SfChart.ChartBehaviors>
+    </chart:SfChart>
+</ContentPage>

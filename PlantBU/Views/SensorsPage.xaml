@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlantBU.Views.SensorsPage" 
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             xmlns:resource="clr-namespace:PlantBU.Properties" 
+             Title="{x:Static resource:Resources.Sensors}">
+    <ContentPage.BindingContext>
+        <local:SensorsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar   x:Name="searchBar" TextChanged="OnFilterTextChanged" TextColor="Black"/>
+            <sync:SfListView x:Name="listView" 
+                                     ItemsSource="{Binding Sensors}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                     VerticalOptions="FillAndExpand" 
+                                     AutoFitMode="DynamicHeight">
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame x:Name="frame" >
+                                    <StackLayout>
+                                        <Label Text="{Binding Code}"  />
+                                        <Label Text="{Binding Description}" LineBreakMode="TailTruncation" />
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label   Text="{Binding InstrumentType}" LineBreakMode="TailTruncation" />
+                                            <Label  Text="{Binding Brand}" LineBreakMode="TailTruncation" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+            </sync:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

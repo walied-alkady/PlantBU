@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
+  <ItemGroup>
+    <None Remove="ATR 2021-Blank.xlsm" />
+    <None Remove="ATR 2021-Blank.xlsx" />
+    <None Remove="CSVs\Plant.csv" />
+    <None Remove="CSVs\ProductionLines.csv" />
+    <None Remove="CSVs\Shops.csv" />
+    <None Remove="Images\GroupCollapse.png" />
+    <None Remove="Images\GroupExpand.png" />
+    <None Remove="Images\Plant.jpg" />
+    <None Remove="Images\PlantNight.jpg" />
+    <None Remove="Inventory.csv" />
+    <None Remove="Motors.csv" />
+    <None Remove="MotSpares.csv" />
+    <None Remove="Schedules.xlsx" />
+    <None Remove="Sensors.csv" />
+    <None Remove="Spare.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ATR 2021-Blank.xlsx" />
+    <EmbeddedResource Include="CSVs\Equipments.csv" />
+    <EmbeddedResource Include="CSVs\Inventory.csv" />
+    <EmbeddedResource Include="CSVs\Motors.csv" />
+    <EmbeddedResource Include="CSVs\Plant.csv" />
+    <EmbeddedResource Include="CSVs\ProductionLines.csv" />
+    <EmbeddedResource Include="CSVs\Shops.csv" />
+    <EmbeddedResource Include="CSVs\SpareParts.csv" />
+    <EmbeddedResource Include="CSVs\Sensors.csv" />
+    <EmbeddedResource Include="CSVs\InventorySpares.csv" />
+    <EmbeddedResource Include="Images\GroupCollapse.png" />
+    <EmbeddedResource Include="Images\GroupExpand.png" />
+    <EmbeddedResource Include="Images\Plant.jpg" />
+    <EmbeddedResource Include="Images\PlantNight.jpg" />
+    <EmbeddedResource Include="Schedules.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.1.1" />
+    <PackageReference Include="Dropbox.Api" Version="6.11.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Realm" Version="10.3.0" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBackdrop" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="19.2.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.XlsIO" Version="19.2.0.49" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Reactive" Version="5.0.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EmployeeSchedulePerformancePage.xaml.cs">
+      <DependentUpon>EmployeeSchedulePerformancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EquipmentPage.xaml.cs">
+      <DependentUpon>EquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LogsPage.xaml.cs">
+      <DependentUpon>LogsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MotorPage.xaml.cs">
+      <DependentUpon>MotorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PlantPage.xaml.cs">
+      <DependentUpon>PlantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SafetyReportsPage.xaml.cs">
+      <DependentUpon>SafetyReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SchedulesPage.xaml.cs">
+      <DependentUpon>SchedulesPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.ar-EG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BakRestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BudgetitemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BudgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DrawingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmployeeAttendancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmployeePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmployeeSchedulePerformancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmployeesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EquipmentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EquipmentsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ExpensePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ExpensesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InventoriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InventoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LogPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LogsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MotorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MotorsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\OtherComponentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\OtherComponentsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PlantPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProductionLinePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SafetyReportAnalysisPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SafetyReportPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SafetyReportsAnalysisPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SafetyReportsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SchedulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SchedulesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SensorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SensorsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ShopPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SparePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

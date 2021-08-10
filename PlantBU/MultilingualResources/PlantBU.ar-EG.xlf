@@ -1,0 +1,1436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ar-EG" original="PLANTBU/PROPERTIES/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="PLANTBU/PROPERTIES/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="Plant" translate="yes" xml:space="preserve">
+          <source>Plant</source>
+          <target state="translated">مصنع</target>
+        </trans-unit>
+        <trans-unit id="Shop" translate="yes" xml:space="preserve">
+          <source>Shop</source>
+          <target state="translated">منطقة</target>
+        </trans-unit>
+        <trans-unit id="Welcome" translate="yes" xml:space="preserve">
+          <source>Welcome to TitanBU</source>
+          <target state="translated">مرحبا بك في TitanBU</target>
+        </trans-unit>
+        <trans-unit id="Budget" translate="yes" xml:space="preserve">
+          <source>Budget</source>
+          <target state="translated">ميزانية</target>
+        </trans-unit>
+        <trans-unit id="EmployeeInfo" translate="yes" xml:space="preserve">
+          <source>Employee Info</source>
+          <target state="translated">معلومات الموظف</target>
+        </trans-unit>
+        <trans-unit id="Equipments" translate="yes" xml:space="preserve">
+          <source>Equipments</source>
+          <target state="translated">معدات</target>
+        </trans-unit>
+        <trans-unit id="Expenses" translate="yes" xml:space="preserve">
+          <source>Expenses</source>
+          <target state="translated">مصاريف</target>
+        </trans-unit>
+        <trans-unit id="Inventory" translate="yes" xml:space="preserve">
+          <source>Inventory</source>
+          <target state="translated">المخزن</target>
+        </trans-unit>
+        <trans-unit id="Loading" translate="yes" xml:space="preserve">
+          <source>Loading...</source>
+          <target state="translated">تحميل...</target>
+        </trans-unit>
+        <trans-unit id="Logs" translate="yes" xml:space="preserve">
+          <source>Logs</source>
+          <target state="translated">سجل</target>
+        </trans-unit>
+        <trans-unit id="Schedules" translate="yes" xml:space="preserve">
+          <source>Schedules</source>
+          <target state="translated">جدول الاعمال</target>
+        </trans-unit>
+        <trans-unit id="LogIn" translate="yes" xml:space="preserve">
+          <source>Log In</source>
+          <target state="translated">تسجيل الدخول</target>
+        </trans-unit>
+        <trans-unit id="ForgetUser" translate="yes" xml:space="preserve">
+          <source>Forget User</source>
+          <target state="translated">مسح بيانات المستخدم</target>
+        </trans-unit>
+        <trans-unit id="LogOut" translate="yes" xml:space="preserve">
+          <source>Log Out</source>
+          <target state="translated">تسجيل خروج</target>
+        </trans-unit>
+        <trans-unit id="Active" translate="yes" xml:space="preserve">
+          <source>Active</source>
+          <target state="translated">نشط</target>
+        </trans-unit>
+        <trans-unit id="Add" translate="yes" xml:space="preserve">
+          <source>Add</source>
+          <target state="translated">ضف</target>
+        </trans-unit>
+        <trans-unit id="AddLine" translate="yes" xml:space="preserve">
+          <source>Add Production Line</source>
+          <target state="translated">ضف خط إنتاج</target>
+        </trans-unit>
+        <trans-unit id="AddMotor" translate="yes" xml:space="preserve">
+          <source>Add Motor</source>
+          <target state="translated">ضف موتور</target>
+        </trans-unit>
+        <trans-unit id="AddOther" translate="yes" xml:space="preserve">
+          <source>Add Other</source>
+          <target state="translated">ضف أخرى</target>
+        </trans-unit>
+        <trans-unit id="AddSensor" translate="yes" xml:space="preserve">
+          <source>Add Sensor</source>
+          <target state="translated">ضف مستشعر</target>
+        </trans-unit>
+        <trans-unit id="AddShop" translate="yes" xml:space="preserve">
+          <source>Add Shop</source>
+          <target state="translated">ضف منطقة</target>
+        </trans-unit>
+        <trans-unit id="Assignee" translate="yes" xml:space="preserve">
+          <source>Assignee</source>
+          <target state="translated">المعهود إليه</target>
+        </trans-unit>
+        <trans-unit id="Attendance" translate="yes" xml:space="preserve">
+          <source>Attendance</source>
+          <target state="translated">حضور</target>
+        </trans-unit>
+        <trans-unit id="BasicData" translate="yes" xml:space="preserve">
+          <source>Basic Data</source>
+          <target state="translated">البيانات الأساسية</target>
+        </trans-unit>
+        <trans-unit id="BearingDE" translate="yes" xml:space="preserve">
+          <source>Bearing DE</source>
+          <target state="translated">بلي الناقل</target>
+        </trans-unit>
+        <trans-unit id="BearingNDE" translate="yes" xml:space="preserve">
+          <source>Bearing NDE</source>
+          <target state="translated">بلي الغير الناقل</target>
+        </trans-unit>
+        <trans-unit id="Brand" translate="yes" xml:space="preserve">
+          <source>Brand</source>
+          <target state="translated">ماركة</target>
+        </trans-unit>
+        <trans-unit id="BrandType" translate="yes" xml:space="preserve">
+          <source>Brand Type</source>
+          <target state="translated">نوع الماركة</target>
+        </trans-unit>
+        <trans-unit id="BudgetItem" translate="yes" xml:space="preserve">
+          <source>Budget Item</source>
+          <target state="translated">بند الميزانية</target>
+        </trans-unit>
+        <trans-unit id="BudgetItemDetails" translate="yes" xml:space="preserve">
+          <source>Budget Item Details</source>
+          <target state="translated">تفاصيل بند الميزانية</target>
+        </trans-unit>
+        <trans-unit id="BudgetNotDefined" translate="yes" xml:space="preserve">
+          <source>Budget Not Defined!</source>
+          <target state="translated">الميزانية غير معرفة!</target>
+        </trans-unit>
+        <trans-unit id="Cancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="translated">يلغي</target>
+        </trans-unit>
+        <trans-unit id="Code" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target state="translated">كود</target>
+        </trans-unit>
+        <trans-unit id="Communication" translate="yes" xml:space="preserve">
+          <source>Communication</source>
+          <target state="translated">الاتصال</target>
+        </trans-unit>
+        <trans-unit id="Cost" translate="yes" xml:space="preserve">
+          <source>Cost</source>
+          <target state="translated">كلفة</target>
+        </trans-unit>
+        <trans-unit id="Current" translate="yes" xml:space="preserve">
+          <source>Current(A)</source>
+          <target state="translated"> التيار(A)</target>
+        </trans-unit>
+        <trans-unit id="Data" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <target state="translated">البيانات</target>
+        </trans-unit>
+        <trans-unit id="DatabaseNotAv" translate="yes" xml:space="preserve">
+          <source>Database is not ready</source>
+          <target state="translated">قاعدة بيانات ليست جاهزة</target>
+        </trans-unit>
+        <trans-unit id="Date" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target state="translated">تاريخ</target>
+        </trans-unit>
+        <trans-unit id="DateEnd" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <target state="translated">تاريخ الاستحقاق</target>
+        </trans-unit>
+        <trans-unit id="DateStart" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <target state="translated">تاريخ البدء</target>
+        </trans-unit>
+        <trans-unit id="DeleteConfirm" translate="yes" xml:space="preserve">
+          <source>Sure to delete</source>
+          <target state="translated">متأكد من حذف؟</target>
+        </trans-unit>
+        <trans-unit id="Deleted" translate="yes" xml:space="preserve">
+          <source>Deleted!</source>
+          <target state="translated">تم الحذف!</target>
+        </trans-unit>
+        <trans-unit id="Description" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="translated">وصف</target>
+        </trans-unit>
+        <trans-unit id="Description1" translate="yes" xml:space="preserve">
+          <source>Description 1</source>
+          <target state="translated">وصف 1</target>
+        </trans-unit>
+        <trans-unit id="Description2" translate="yes" xml:space="preserve">
+          <source>Description 2</source>
+          <target state="translated">الوصف 2</target>
+        </trans-unit>
+        <trans-unit id="Details" translate="yes" xml:space="preserve">
+          <source>Details</source>
+          <target state="translated">تفاصيل</target>
+        </trans-unit>
+        <trans-unit id="Done" translate="yes" xml:space="preserve">
+          <source>Done</source>
+          <target state="translated">تم</target>
+        </trans-unit>
+        <trans-unit id="Drawing" translate="yes" xml:space="preserve">
+          <source>Drawing</source>
+          <target state="translated">رسم</target>
+        </trans-unit>
+        <trans-unit id="DrawingNoMessage" translate="yes" xml:space="preserve">
+          <source>No drawings available,Download!</source>
+          <target state="translated">لا  يوجد رسومات متاحة، تحميل!</target>
+        </trans-unit>
+        <trans-unit id="DrawingUpdateMessage" translate="yes" xml:space="preserve">
+          <source>New drawings update,Download!</source>
+          <target state="translated">يوجد رسومات جديدة، تحميل!</target>
+        </trans-unit>
+        <trans-unit id="Edit" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target state="translated">تحرير</target>
+        </trans-unit>
+        <trans-unit id="ElectricalData" translate="yes" xml:space="preserve">
+          <source>Electrical Data</source>
+          <target state="translated">البيانات الكهربائية</target>
+        </trans-unit>
+        <trans-unit id="Email" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="translated">بريد إلكتروني</target>
+        </trans-unit>
+        <trans-unit id="Employee" translate="yes" xml:space="preserve">
+          <source>Employee</source>
+          <target state="translated">الموظف</target>
+        </trans-unit>
+        <trans-unit id="EmployeeAttendance" translate="yes" xml:space="preserve">
+          <source>Employee Attendance</source>
+          <target state="translated"> حضور الموظف </target>
+        </trans-unit>
+        <trans-unit id="Employees" translate="yes" xml:space="preserve">
+          <source>Employees</source>
+          <target state="translated">الموظفين</target>
+        </trans-unit>
+        <trans-unit id="Equipment" translate="yes" xml:space="preserve">
+          <source>Equipment</source>
+          <target state="translated">معدة</target>
+        </trans-unit>
+        <trans-unit id="EquipmentsList" translate="yes" xml:space="preserve">
+          <source>Equipments List</source>
+          <target state="translated">قائمة المعدات</target>
+        </trans-unit>
+        <trans-unit id="Error" translate="yes" xml:space="preserve">
+          <source>Error</source>
+          <target state="translated">خطأ</target>
+        </trans-unit>
+        <trans-unit id="Expense" translate="yes" xml:space="preserve">
+          <source>Expense</source>
+          <target state="translated">مصروف</target>
+        </trans-unit>
+        <trans-unit id="ExtraData" translate="yes" xml:space="preserve">
+          <source>Extra Data</source>
+          <target state="translated">بيانات إضافية</target>
+        </trans-unit>
+        <trans-unit id="FirstName" translate="yes" xml:space="preserve">
+          <source>First Name</source>
+          <target state="translated">الاسم الأول</target>
+        </trans-unit>
+        <trans-unit id="FrameSize" translate="yes" xml:space="preserve">
+          <source>Frame Size</source>
+          <target state="translated">حجم الاطار</target>
+        </trans-unit>
+        <trans-unit id="Frequency" translate="yes" xml:space="preserve">
+          <source>Frequency(Hz)</source>
+          <target state="translated">التردد (هرتز)</target>
+        </trans-unit>
+        <trans-unit id="GreaseBrand" translate="yes" xml:space="preserve">
+          <source>Grease Brand</source>
+          <target state="translated">ماركة الشحم </target>
+        </trans-unit>
+        <trans-unit id="GreaseBrandType" translate="yes" xml:space="preserve">
+          <source>Grease Brand Type</source>
+          <target state="translated">نوع ماركة الشحم </target>
+        </trans-unit>
+        <trans-unit id="GreaseQuantityDE" translate="yes" xml:space="preserve">
+          <source>Drive End Quantity(gm)</source>
+          <target state="translated">كمية الجزء الناقل (جم)</target>
+        </trans-unit>
+        <trans-unit id="GreaseQuantityNDE" translate="yes" xml:space="preserve">
+          <source>Non-Drive End Quantity(gm)</source>
+          <target state="translated">كمية الجزء الغير الناقل (جم)</target>
+        </trans-unit>
+        <trans-unit id="InActive" translate="yes" xml:space="preserve">
+          <source>Inactive</source>
+          <target state="translated">غير نشط</target>
+        </trans-unit>
+        <trans-unit id="Info" translate="yes" xml:space="preserve">
+          <source>Info</source>
+          <target state="translated">معلومات</target>
+        </trans-unit>
+        <trans-unit id="Initialize" translate="yes" xml:space="preserve">
+          <source> Initialize</source>
+          <target state="translated">تهيئة</target>
+        </trans-unit>
+        <trans-unit id="InstrumentSpecs" translate="yes" xml:space="preserve">
+          <source>Instrument Specs</source>
+          <target state="translated">مواصفات الجهاز </target>
+        </trans-unit>
+        <trans-unit id="InstrumentType" translate="yes" xml:space="preserve">
+          <source>Instrument Type (Thermometer , Flowmeter, Pressure, ...)</source>
+          <target state="translated"> نوع الجهاز (حرارة، التدفق ,الضغط و...)</target>
+        </trans-unit>
+        <trans-unit id="InternetConnectionMessage" translate="yes" xml:space="preserve">
+          <source>Not connected to internet!</source>
+          <target state="translated">لم تكن متصلا بالإنترنت!</target>
+        </trans-unit>
+        <trans-unit id="IntervalDay" translate="yes" xml:space="preserve">
+          <source>Interval (Days)</source>
+          <target state="translated"> المدة (أيام)</target>
+        </trans-unit>
+        <trans-unit id="Invalide" translate="yes" xml:space="preserve">
+          <source>Invalide</source>
+          <target state="translated">غير صالح</target>
+        </trans-unit>
+        <trans-unit id="Inventories" translate="yes" xml:space="preserve">
+          <source>Inventories</source>
+          <target state="translated">المخازن</target>
+        </trans-unit>
+        <trans-unit id="InventoryLoadMessage" translate="yes" xml:space="preserve">
+          <source>Inventory is not loaded,load inventory?</source>
+          <target state="translated">لم يتم تحميل المخزن، تحميل؟</target>
+        </trans-unit>
+        <trans-unit id="InventorySelect" translate="yes" xml:space="preserve">
+          <source>Select From Inventory</source>
+          <target state="translated">اختر من المخزن</target>
+        </trans-unit>
+        <trans-unit id="IsolationGalvanic" translate="yes" xml:space="preserve">
+          <source>Galvanic Isolation</source>
+          <target state="translated">العزلة كلفاني</target>
+        </trans-unit>
+        <trans-unit id="LastName" translate="yes" xml:space="preserve">
+          <source>Last Name</source>
+          <target state="translated">الاسم الخير</target>
+        </trans-unit>
+        <trans-unit id="LineNo" translate="yes" xml:space="preserve">
+          <source>Line Number</source>
+          <target state="translated">رقم الخط</target>
+        </trans-unit>
+        <trans-unit id="LoadDefaultData" translate="yes" xml:space="preserve">
+          <source>Data Is not Loaded,Load Defaults?</source>
+          <target state="translated">لم يتم تحميل البيانات ، تحميل الافتراضات؟</target>
+        </trans-unit>
+        <trans-unit id="Location" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <target state="translated">مكان</target>
+        </trans-unit>
+        <trans-unit id="Log" translate="yes" xml:space="preserve">
+          <source>Log</source>
+          <target state="translated">سجل</target>
+        </trans-unit>
+        <trans-unit id="LoggedUser" translate="yes" xml:space="preserve">
+          <source>Logged in as:</source>
+          <target state="translated">تسجيل دخولك:</target>
+        </trans-unit>
+        <trans-unit id="LogInMessage" translate="yes" xml:space="preserve">
+          <source>"Please Log In..."</source>
+          <target state="translated">الرجاء تسجيل الدخول...</target>
+        </trans-unit>
+        <trans-unit id="MainPageTitle" translate="yes" xml:space="preserve">
+          <source>TitanBU</source>
+          <target state="translated">TitanBU</target>
+        </trans-unit>
+        <trans-unit id="ManufacturerData" translate="yes" xml:space="preserve">
+          <source>Manufacturer Data</source>
+          <target state="translated">بيانات الشركة المصنعة</target>
+        </trans-unit>
+        <trans-unit id="MechanicalData" translate="yes" xml:space="preserve">
+          <source>Mechanical Data</source>
+          <target state="translated">البيانات الميكانيكية</target>
+        </trans-unit>
+        <trans-unit id="MinQty" translate="yes" xml:space="preserve">
+          <source>Minimum Quantity</source>
+          <target state="translated">الحد الأدنى من الكمية</target>
+        </trans-unit>
+        <trans-unit id="Motor" translate="yes" xml:space="preserve">
+          <source>Motor</source>
+          <target state="translated">محرك</target>
+        </trans-unit>
+        <trans-unit id="Motors" translate="yes" xml:space="preserve">
+          <source>Motors</source>
+          <target state="translated">المحركات</target>
+        </trans-unit>
+        <trans-unit id="Mounting" translate="yes" xml:space="preserve">
+          <source>Mounting</source>
+          <target state="translated">طريقة التركيب</target>
+        </trans-unit>
+        <trans-unit id="Name" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="translated">اسم</target>
+        </trans-unit>
+        <trans-unit id="New" translate="yes" xml:space="preserve">
+          <source>New</source>
+          <target state="translated">جديد</target>
+        </trans-unit>
+        <trans-unit id="No" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="translated">لا</target>
+        </trans-unit>
+        <trans-unit id="NotAvailable" translate="yes" xml:space="preserve">
+          <source> not available</source>
+          <target state="translated">غير متاح</target>
+        </trans-unit>
+        <trans-unit id="NotFound" translate="yes" xml:space="preserve">
+          <source>Not Found</source>
+          <target state="translated">غير موجود</target>
+        </trans-unit>
+        <trans-unit id="Ok" translate="yes" xml:space="preserve">
+          <source>ok</source>
+          <target state="translated">نعم</target>
+        </trans-unit>
+        <trans-unit id="OnHand" translate="yes" xml:space="preserve">
+          <source>On Hand</source>
+          <target state="translated">متاح</target>
+        </trans-unit>
+        <trans-unit id="OperationalDetails" translate="yes" xml:space="preserve">
+          <source>Operational Details</source>
+          <target state="translated">تفاصيل التشغيل</target>
+        </trans-unit>
+        <trans-unit id="OperationalLimitH" translate="yes" xml:space="preserve">
+          <source>Operation Limit H</source>
+          <target state="translated">حد التشفيل العالي</target>
+        </trans-unit>
+        <trans-unit id="OperationalLimitHH" translate="yes" xml:space="preserve">
+          <source>Operation Limit HH</source>
+          <target state="translated">حد التشفيل العالي جدا</target>
+        </trans-unit>
+        <trans-unit id="OperationalLimitL" translate="yes" xml:space="preserve">
+          <source>Operation Limit L</source>
+          <target state="translated">حد التشفيل المنخفض</target>
+        </trans-unit>
+        <trans-unit id="OperationalLimitLL" translate="yes" xml:space="preserve">
+          <source>Operation Limit LL</source>
+          <target state="translated">حد التشفيل المنخفض جدا</target>
+        </trans-unit>
+        <trans-unit id="OperationalUnit" translate="yes" xml:space="preserve">
+          <source>Operational Unit</source>
+          <target state="translated">وحدة التشفيل</target>
+        </trans-unit>
+        <trans-unit id="OtherComponent" translate="yes" xml:space="preserve">
+          <source>Compmonent</source>
+          <target state="translated">مكون</target>
+        </trans-unit>
+        <trans-unit id="OtherComponents" translate="yes" xml:space="preserve">
+          <source>Other Compmonents</source>
+          <target state="translated">مكون اخر</target>
+        </trans-unit>
+        <trans-unit id="PartCode" translate="yes" xml:space="preserve">
+          <source>Part Code</source>
+          <target state="translated">كود القطعة</target>
+        </trans-unit>
+        <trans-unit id="Password" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="translated">كلمة السر</target>
+        </trans-unit>
+        <trans-unit id="Pending" translate="yes" xml:space="preserve">
+          <source>Pending</source>
+          <target state="translated">قيد الانتظار</target>
+        </trans-unit>
+        <trans-unit id="Poles" translate="yes" xml:space="preserve">
+          <source>Poles</source>
+          <target state="translated">اقطاب</target>
+        </trans-unit>
+        <trans-unit id="Power" translate="yes" xml:space="preserve">
+          <source>Power(Kw)</source>
+          <target state="translated">القدرة (كيلوواط)</target>
+        </trans-unit>
+        <trans-unit id="PowerFactor" translate="yes" xml:space="preserve">
+          <source>Cos Φ</source>
+          <target state="translated">معامل القدرة</target>
+        </trans-unit>
+        <trans-unit id="ProductionLine" translate="yes" xml:space="preserve">
+          <source>Production Line</source>
+          <target state="translated">خط الإنتاج</target>
+        </trans-unit>
+        <trans-unit id="ProductionLines" translate="yes" xml:space="preserve">
+          <source>Production Lines</source>
+          <target state="translated">خطوط الإنتاج</target>
+        </trans-unit>
+        <trans-unit id="Quantity" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target state="translated">كمية</target>
+        </trans-unit>
+        <trans-unit id="Remove" translate="yes" xml:space="preserve">
+          <source>Remove</source>
+          <target state="translated">إزالة</target>
+        </trans-unit>
+        <trans-unit id="Repair" translate="yes" xml:space="preserve">
+          <source>Repair</source>
+          <target state="translated">الاصلاح</target>
+        </trans-unit>
+        <trans-unit id="RepairDetails" translate="yes" xml:space="preserve">
+          <source>Repair Details</source>
+          <target state="translated">تفاصيل الاصلاح</target>
+        </trans-unit>
+        <trans-unit id="Savedto" translate="yes" xml:space="preserve">
+          <source>Saved to</source>
+          <target state="translated">حفظ إلى </target>
+        </trans-unit>
+        <trans-unit id="Schedule" translate="yes" xml:space="preserve">
+          <source>Schedule</source>
+          <target state="translated">جدول العمل</target>
+        </trans-unit>
+        <trans-unit id="Select" translate="yes" xml:space="preserve">
+          <source>Select</source>
+          <target state="translated">اختر</target>
+        </trans-unit>
+        <trans-unit id="Sensor" translate="yes" xml:space="preserve">
+          <source>Sensor</source>
+          <target state="translated">المستشعر</target>
+        </trans-unit>
+        <trans-unit id="Sensors" translate="yes" xml:space="preserve">
+          <source>Sensors</source>
+          <target state="translated">المستشعرات</target>
+        </trans-unit>
+        <trans-unit id="ServiceType" translate="yes" xml:space="preserve">
+          <source>Service Type</source>
+          <target state="translated">نوع الخدمة</target>
+        </trans-unit>
+        <trans-unit id="Set" translate="yes" xml:space="preserve">
+          <source>Set</source>
+          <target state="translated">حدد</target>
+        </trans-unit>
+        <trans-unit id="ShopExtraData" translate="yes" xml:space="preserve">
+          <source>Shop Extra Data</source>
+          <target state="translated">بيانات إضافية للمنطقة</target>
+        </trans-unit>
+        <trans-unit id="Shops" translate="yes" xml:space="preserve">
+          <source>Shops</source>
+          <target state="translated">مناطق</target>
+        </trans-unit>
+        <trans-unit id="SignalType" translate="yes" xml:space="preserve">
+          <source>Signal Type (4…20mA , 0…10V,  ...)</source>
+          <target state="translated">نوع الاشارة (4…20mA , 0…10V, ...)</target>
+        </trans-unit>
+        <trans-unit id="Software" translate="yes" xml:space="preserve">
+          <source>Software</source>
+          <target state="translated">برنامج</target>
+        </trans-unit>
+        <trans-unit id="Spare" translate="yes" xml:space="preserve">
+          <source>Spare</source>
+          <target state="translated">قطعة غيار</target>
+        </trans-unit>
+        <trans-unit id="SparePart" translate="yes" xml:space="preserve">
+          <source>Spare Part</source>
+          <target state="translated">قطعة غيار</target>
+        </trans-unit>
+        <trans-unit id="SpareParts" translate="yes" xml:space="preserve">
+          <source>SpareParts</source>
+          <target state="translated">قطع غيار</target>
+        </trans-unit>
+        <trans-unit id="Spares" translate="yes" xml:space="preserve">
+          <source>Spares</source>
+          <target state="translated">قطع غيار</target>
+        </trans-unit>
+        <trans-unit id="Speed" translate="yes" xml:space="preserve">
+          <source>Speed(rpm)</source>
+          <target state="translated">السرعة (rpm)</target>
+        </trans-unit>
+        <trans-unit id="Successfull" translate="yes" xml:space="preserve">
+          <source>Successfull</source>
+          <target state="translated">نجاح</target>
+        </trans-unit>
+        <trans-unit id="SupplyData" translate="yes" xml:space="preserve">
+          <source>Supply Data</source>
+          <target state="translated">بيانات مصدر الطاقة</target>
+        </trans-unit>
+        <trans-unit id="SupplyPanelLocation" translate="yes" xml:space="preserve">
+          <source>Location In Supply Panel</source>
+          <target state="translated">المكان في لوحة مصدر الطاقة</target>
+        </trans-unit>
+        <trans-unit id="SupplyPanelName" translate="yes" xml:space="preserve">
+          <source>Supply Panel Name</source>
+          <target state="translated">اسم لوحة مصدر الطاقة</target>
+        </trans-unit>
+        <trans-unit id="Title" translate="yes" xml:space="preserve">
+          <source>Title</source>
+          <target state="translated">لقب</target>
+        </trans-unit>
+        <trans-unit id="TitleSubject" translate="yes" xml:space="preserve">
+          <source>Title</source>
+          <target state="translated">لقب</target>
+        </trans-unit>
+        <trans-unit id="TrackItem" translate="yes" xml:space="preserve">
+          <source>TrackItem</source>
+          <target state="translated">تتبع البند</target>
+        </trans-unit>
+        <trans-unit id="Unit" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <target state="translated">وحدة</target>
+        </trans-unit>
+        <trans-unit id="UserError" translate="yes" xml:space="preserve">
+          <source>Wrong username or password.</source>
+          <target state="translated">اسم المستخدم أو كلمة المرور خاطئة.</target>
+        </trans-unit>
+        <trans-unit id="UserName" translate="yes" xml:space="preserve">
+          <source>User Name</source>
+          <target state="translated">اسم االمستخدم</target>
+        </trans-unit>
+        <trans-unit id="Value" translate="yes" xml:space="preserve">
+          <source>Value</source>
+          <target state="translated">قيمة</target>
+        </trans-unit>
+        <trans-unit id="Volt" translate="yes" xml:space="preserve">
+          <source>Volt</source>
+          <target state="translated">الجهد</target>
+        </trans-unit>
+        <trans-unit id="VoltageSupply" translate="yes" xml:space="preserve">
+          <source>Supply Voltage</source>
+          <target state="translated">الجهد</target>
+        </trans-unit>
+        <trans-unit id="Wait" translate="yes" xml:space="preserve">
+          <source>Please Wait...</source>
+          <target state="translated">الرجاء الانتظار...</target>
+        </trans-unit>
+        <trans-unit id="Weight" translate="yes" xml:space="preserve">
+          <source>Weight(Kg)</source>
+          <target state="translated">الوزن (kg)</target>
+        </trans-unit>
+        <trans-unit id="Wiring" translate="yes" xml:space="preserve">
+          <source>Wiring</source>
+          <target state="translated">التوصيل</target>
+        </trans-unit>
+        <trans-unit id="OverBudget" translate="yes" xml:space="preserve">
+          <source>Over Budget</source>
+          <target state="translated">أكثر من الميزانية</target>
+        </trans-unit>
+        <trans-unit id="BudgetAnalysis" translate="yes" xml:space="preserve">
+          <source>Budget/Expense Analysis</source>
+          <target state="translated">تحليل الميزانية / المصروفات</target>
+        </trans-unit>
+        <trans-unit id="Arabic" translate="yes" xml:space="preserve">
+          <source>Arabic</source>
+          <target state="translated">عربي</target>
+        </trans-unit>
+        <trans-unit id="English" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="translated">انجليزي</target>
+        </trans-unit>
+        <trans-unit id="Day" translate="yes" xml:space="preserve">
+          <source>Day</source>
+          <target state="translated">يوم</target>
+        </trans-unit>
+        <trans-unit id="Dollar" translate="yes" xml:space="preserve">
+          <source>$</source>
+          <target state="translated">دولار</target>
+        </trans-unit>
+        <trans-unit id="EGP" translate="yes" xml:space="preserve">
+          <source>EGP</source>
+          <target state="translated">جنيه مصري</target>
+        </trans-unit>
+        <trans-unit id="Euro" translate="yes" xml:space="preserve">
+          <source>€</source>
+          <target state="translated">يورو</target>
+        </trans-unit>
+        <trans-unit id="Month" translate="yes" xml:space="preserve">
+          <source>Month</source>
+          <target state="translated">شهر</target>
+        </trans-unit>
+        <trans-unit id="Number" translate="yes" xml:space="preserve">
+          <source>Number</source>
+          <target state="translated">عدد</target>
+        </trans-unit>
+        <trans-unit id="Performance" translate="yes" xml:space="preserve">
+          <source>Performance</source>
+          <target state="translated">اداء</target>
+        </trans-unit>
+        <trans-unit id="Sum" translate="yes" xml:space="preserve">
+          <source>Sum</source>
+          <target state="translated">محموع</target>
+        </trans-unit>
+        <trans-unit id="Tasks" translate="yes" xml:space="preserve">
+          <source>Tasks</source>
+          <target state="translated">مهمات</target>
+        </trans-unit>
+        <trans-unit id="Total" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <target state="translated">اجمالي</target>
+        </trans-unit>
+        <trans-unit id="Year" translate="yes" xml:space="preserve">
+          <source>Year</source>
+          <target state="translated">سنة</target>
+        </trans-unit>
+        <trans-unit id="BirthDate" translate="yes" xml:space="preserve">
+          <source>BirthDate</source>
+          <target state="translated">تاريخ الميلاد</target>
+        </trans-unit>
+        <trans-unit id="Type" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target state="translated">نوع</target>
+        </trans-unit>
+        <trans-unit id="CSVFileMessageError" translate="yes" xml:space="preserve">
+          <source>Please select a valid CSV File</source>
+          <target state="translated">الرجاء اختيار ملف CSV</target>
+        </trans-unit>
+        <trans-unit id="CSVFileMessageSelect" translate="yes" xml:space="preserve">
+          <source>Select a CSV File</source>
+          <target state="translated">اختر ملف CSV</target>
+        </trans-unit>
+        <trans-unit id="LoadScheduleFile" translate="yes" xml:space="preserve">
+          <source>Load Schedules File</source>
+          <target state="translated">حمل ملف جدول الاعمال</target>
+        </trans-unit>
+        <trans-unit id="CodeError" translate="yes" xml:space="preserve">
+          <source>Code Error</source>
+          <target state="translated">خطأ في الكود</target>
+        </trans-unit>
+        <trans-unit id="CodeMessage" translate="yes" xml:space="preserve">
+          <source>Enter Code</source>
+          <target state="translated">ادخل الكود</target>
+        </trans-unit>
+        <trans-unit id="Component" translate="yes" xml:space="preserve">
+          <source>Component</source>
+          <target state="translated">مكون</target>
+        </trans-unit>
+        <trans-unit id="SelectComponent" translate="yes" xml:space="preserve">
+          <source>SelectComponent</source>
+          <target state="translated">اختر مكون</target>
+        </trans-unit>
+        <trans-unit id="Clear" translate="yes" xml:space="preserve">
+          <source>Clear</source>
+          <target state="translated">تصفية</target>
+        </trans-unit>
+        <trans-unit id="LoadScheduleSpares" translate="yes" xml:space="preserve">
+          <source>Load Schedule Spares</source>
+          <target state="translated">حمل قطع غيار الاعمال المجدولة</target>
+        </trans-unit>
+        <trans-unit id="Hazard" translate="yes" xml:space="preserve">
+          <source>Hazard</source>
+          <target state="translated">خطر</target>
+        </trans-unit>
+        <trans-unit id="Report" translate="yes" xml:space="preserve">
+          <source>Report</source>
+          <target state="translated">تقرير</target>
+        </trans-unit>
+        <trans-unit id="Risk" translate="yes" xml:space="preserve">
+          <source>Risk</source>
+          <target state="translated">مخاطرة</target>
+        </trans-unit>
+        <trans-unit id="Safety" translate="yes" xml:space="preserve">
+          <source>Safety</source>
+          <target state="translated">أمان</target>
+        </trans-unit>
+        <trans-unit id="SafetyReport" translate="yes" xml:space="preserve">
+          <source>Safety Report</source>
+          <target state="translated">تقرير السلامة</target>
+        </trans-unit>
+        <trans-unit id="SafetyReports" translate="yes" xml:space="preserve">
+          <source>Safety Reports</source>
+          <target state="translated">تقارير السلامة</target>
+        </trans-unit>
+        <trans-unit id="360Audit" translate="yes" xml:space="preserve">
+          <source>360 Audit</source>
+          <target state="translated">360 تدقيق</target>
+        </trans-unit>
+        <trans-unit id="CloseDate" translate="yes" xml:space="preserve">
+          <source>Close Date</source>
+          <target state="translated">تاريخ قريب</target>
+        </trans-unit>
+        <trans-unit id="DueDate" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <target state="translated">تاريخ الاستحقاق</target>
+        </trans-unit>
+        <trans-unit id="Emergencyplan" translate="yes" xml:space="preserve">
+          <source>Emergency plan</source>
+          <target state="translated">خطة الطوارئ</target>
+        </trans-unit>
+        <trans-unit id="EnvMeasurements" translate="yes" xml:space="preserve">
+          <source>Env. Measurements</source>
+          <target state="translated">قياسات البيئة</target>
+        </trans-unit>
+        <trans-unit id="Feedback" translate="yes" xml:space="preserve">
+          <source>Feedback</source>
+          <target state="translated">ردود الفعل</target>
+        </trans-unit>
+        <trans-unit id="Incident" translate="yes" xml:space="preserve">
+          <source>Incident</source>
+          <target state="translated">حادث</target>
+        </trans-unit>
+        <trans-unit id="InternalAudit" translate="yes" xml:space="preserve">
+          <source>Internal Audit</source>
+          <target state="translated">التدقيق الداخلي</target>
+        </trans-unit>
+        <trans-unit id="IssueDate" translate="yes" xml:space="preserve">
+          <source>Issue Date</source>
+          <target state="translated">تاريخ الاصدار</target>
+        </trans-unit>
+        <trans-unit id="IssueOnCompany" translate="yes" xml:space="preserve">
+          <source>Issue On Company</source>
+          <target state="translated">إصدار على الشركة</target>
+        </trans-unit>
+        <trans-unit id="IssueOnCompanyName" translate="yes" xml:space="preserve">
+          <source>Issue On Company Name</source>
+          <target state="translated">إصدار باسم الشركة</target>
+        </trans-unit>
+        <trans-unit id="LegalRequirements" translate="yes" xml:space="preserve">
+          <source>Legal Requirements</source>
+          <target state="translated">متطلبات القانونية</target>
+        </trans-unit>
+        <trans-unit id="ManagementReview" translate="yes" xml:space="preserve">
+          <source>Management Review</source>
+          <target state="translated">مراجعة الإدارة</target>
+        </trans-unit>
+        <trans-unit id="QuarterAudit" translate="yes" xml:space="preserve">
+          <source>Quarter Audit</source>
+          <target state="translated">مراجعة ربع سنوية</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailsArea" translate="yes" xml:space="preserve">
+          <source>Report Details Area</source>
+          <target state="translated">منطقة تفاصيل التقرير</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailscorrectiveActions" translate="yes" xml:space="preserve">
+          <source>Report Details Corrective Actions</source>
+          <target state="translated">تقرير تفاصيل الإجراءات التصحيحية</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailsLine" translate="yes" xml:space="preserve">
+          <source>Report Details Line</source>
+          <target state="translated">تفاصيل التقرير رقم الخط</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailsObservation" translate="yes" xml:space="preserve">
+          <source>Report Details Observation</source>
+          <target state="translated">تقرير تفاصيل الملاحظة</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailsRisk" translate="yes" xml:space="preserve">
+          <source>Report Details Risk</source>
+          <target state="translated">تقرير تفاصيل المخاطر</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailsType" translate="yes" xml:space="preserve">
+          <source>Report Details Type</source>
+          <target state="translated">نوع تفاصيل التقرير</target>
+        </trans-unit>
+        <trans-unit id="ReportDetailsViolationType" translate="yes" xml:space="preserve">
+          <source>Report Details Violation Type</source>
+          <target state="translated">تفاصيل تقرير نوع الانتهاك</target>
+        </trans-unit>
+        <trans-unit id="ReporterDepartment" translate="yes" xml:space="preserve">
+          <source>Reporter Department</source>
+          <target state="translated">القسم المبلغ</target>
+        </trans-unit>
+        <trans-unit id="ReporterDetails" translate="yes" xml:space="preserve">
+          <source>Reporter Details</source>
+          <target state="translated">تفاصيل المبلغ</target>
+        </trans-unit>
+        <trans-unit id="ReporterName" translate="yes" xml:space="preserve">
+          <source>Reporter Name</source>
+          <target state="translated">اسم المبلغ</target>
+        </trans-unit>
+        <trans-unit id="ResponsibilityDepartment" translate="yes" xml:space="preserve">
+          <source>Responsibility Department</source>
+          <target state="translated">مسؤولية قسم </target>
+        </trans-unit>
+        <trans-unit id="ResponsibilityPerson" translate="yes" xml:space="preserve">
+          <source>Responsibility Person</source>
+          <target state="translated">شخص المسؤولية</target>
+        </trans-unit>
+        <trans-unit id="RiskAssessment" translate="yes" xml:space="preserve">
+          <source>Risk Assessment</source>
+          <target state="translated">تقييم المخاطر</target>
+        </trans-unit>
+        <trans-unit id="RoutInsp" translate="yes" xml:space="preserve">
+          <source>Routine Inspection</source>
+          <target state="translated">تفتيش روتينية</target>
+        </trans-unit>
+        <trans-unit id="SafetyAlert" translate="yes" xml:space="preserve">
+          <source>Safety Alert</source>
+          <target state="translated">انذار امان</target>
+        </trans-unit>
+        <trans-unit id="SafetyCommitt" translate="yes" xml:space="preserve">
+          <source>Safety committ</source>
+          <target state="translated">لجنة السلامة</target>
+        </trans-unit>
+        <trans-unit id="SafetyWalk" translate="yes" xml:space="preserve">
+          <source>Safety Walk</source>
+          <target state="translated">فحص قسم الامان</target>
+        </trans-unit>
+        <trans-unit id="SourceOfIssue" translate="yes" xml:space="preserve">
+          <source>Source Of Issue</source>
+          <target state="translated">مصدر المشكلة</target>
+        </trans-unit>
+        <trans-unit id="Status" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target state="translated">الحالة</target>
+        </trans-unit>
+        <trans-unit id="ViolationCompany" translate="yes" xml:space="preserve">
+          <source>Violation Company</source>
+          <target state="translated">الشركة المخالفة</target>
+        </trans-unit>
+        <trans-unit id="ViolationCompanyName" translate="yes" xml:space="preserve">
+          <source>Violation Company Name</source>
+          <target state="translated">اسم الشركة المخالفة</target>
+        </trans-unit>
+        <trans-unit id="ViolationDepartment" translate="yes" xml:space="preserve">
+          <source>Violation Department</source>
+          <target state="translated">القسم المخالف</target>
+        </trans-unit>
+        <trans-unit id="ViolationDuring" translate="yes" xml:space="preserve">
+          <source>Violation During</source>
+          <target state="translated">الانتهاك خلال</target>
+        </trans-unit>
+        <trans-unit id="ViolationName" translate="yes" xml:space="preserve">
+          <source>Violation Name</source>
+          <target state="translated">اسم المخالفة</target>
+        </trans-unit>
+        <trans-unit id="Visitor" translate="yes" xml:space="preserve">
+          <source>Visitor</source>
+          <target state="translated">زائر</target>
+        </trans-unit>
+        <trans-unit id="AbsenceImproperOfSafetyDevice" translate="yes" xml:space="preserve">
+          <source>Absence(Improper) Of Safety Device</source>
+          <target state="translated">غياب (غير لائق) من جهاز السلامة</target>
+        </trans-unit>
+        <trans-unit id="Admin&amp;amp;Finance" translate="yes" xml:space="preserve">
+          <source>Admin&amp;Finance</source>
+          <target state="translated">الإدارة المالية</target>
+        </trans-unit>
+        <trans-unit id="AdminBuilding" translate="yes" xml:space="preserve">
+          <source>Admin Building</source>
+          <target state="translated">المبني الاداري</target>
+        </trans-unit>
+        <trans-unit id="AdminFinance" translate="yes" xml:space="preserve">
+          <source>Admin &amp; Finance</source>
+          <target state="translated">الادارة و التمويل</target>
+        </trans-unit>
+        <trans-unit id="AmmoniaTank" translate="yes" xml:space="preserve">
+          <source>Ammonia tank</source>
+          <target state="translated">تانك الامونيا</target>
+        </trans-unit>
+        <trans-unit id="Asic" translate="yes" xml:space="preserve">
+          <source>Asic</source>
+          <target state="translated">اسيك</target>
+        </trans-unit>
+        <trans-unit id="Bypass" translate="yes" xml:space="preserve">
+          <source>Bypass</source>
+          <target state="translated">باي باص</target>
+        </trans-unit>
+        <trans-unit id="Castle" translate="yes" xml:space="preserve">
+          <source>Castle</source>
+          <target state="translated">قلعة</target>
+        </trans-unit>
+        <trans-unit id="CCRBuilding" translate="yes" xml:space="preserve">
+          <source>CCR Building</source>
+          <target state="translated">مبني التحكم المركزي</target>
+        </trans-unit>
+        <trans-unit id="CementMills" translate="yes" xml:space="preserve">
+          <source>Cement mills</source>
+          <target state="translated">طواحين الاسمنت</target>
+        </trans-unit>
+        <trans-unit id="cic" translate="yes" xml:space="preserve">
+          <source>cic</source>
+          <target state="translated">سي اي سي</target>
+        </trans-unit>
+        <trans-unit id="ClayCrusher" translate="yes" xml:space="preserve">
+          <source>Clay crusher</source>
+          <target state="translated">كسارة الطفلة</target>
+        </trans-unit>
+        <trans-unit id="ClinicAmbulance" translate="yes" xml:space="preserve">
+          <source>Clinic&amp;Ambulance</source>
+          <target state="translated">عيادة وسيارة إسعاف</target>
+        </trans-unit>
+        <trans-unit id="CoalMill" translate="yes" xml:space="preserve">
+          <source>Coal mill</source>
+          <target state="translated">طاحونة الفحم</target>
+        </trans-unit>
+        <trans-unit id="CoalStorage" translate="yes" xml:space="preserve">
+          <source>Coal storage</source>
+          <target state="translated">مخزن الفحم</target>
+        </trans-unit>
+        <trans-unit id="Containers" translate="yes" xml:space="preserve">
+          <source>Containers</source>
+          <target state="translated">حاويات</target>
+        </trans-unit>
+        <trans-unit id="Contractor" translate="yes" xml:space="preserve">
+          <source>Contractor</source>
+          <target state="translated">مقاول</target>
+        </trans-unit>
+        <trans-unit id="Cooler" translate="yes" xml:space="preserve">
+          <source>Cooler</source>
+          <target state="translated">المبرد</target>
+        </trans-unit>
+        <trans-unit id="DailyMazzotTank" translate="yes" xml:space="preserve">
+          <source>Daily mazzot tank</source>
+          <target state="translated">خزان المازوت اليومي</target>
+        </trans-unit>
+        <trans-unit id="DSS" translate="yes" xml:space="preserve">
+          <source>DSS</source>
+          <target state="translated">حمأة الصرف الصحي المجففة</target>
+        </trans-unit>
+        <trans-unit id="East" translate="yes" xml:space="preserve">
+          <source>East</source>
+          <target state="translated">ايست</target>
+        </trans-unit>
+        <trans-unit id="Egymint" translate="yes" xml:space="preserve">
+          <source>Egymint</source>
+          <target state="translated">ايجي منت</target>
+        </trans-unit>
+        <trans-unit id="Electrical" translate="yes" xml:space="preserve">
+          <source>Electrical</source>
+          <target state="translated">الكهرباء</target>
+        </trans-unit>
+        <trans-unit id="ElectricalTunnel" translate="yes" xml:space="preserve">
+          <source>Electrical Tunnel</source>
+          <target state="translated">نفق الكهرباء</target>
+        </trans-unit>
+        <trans-unit id="ElectricalWorkshop" translate="yes" xml:space="preserve">
+          <source>Electrical workshop</source>
+          <target state="translated">ورشة الكهرباء</target>
+        </trans-unit>
+        <trans-unit id="ElectricStations" translate="yes" xml:space="preserve">
+          <source>Electric stations</source>
+          <target state="translated">محطات الكهرباء</target>
+        </trans-unit>
+        <trans-unit id="ELGazaarya" translate="yes" xml:space="preserve">
+          <source>EL-Gazaarya</source>
+          <target state="translated">الجزائرية</target>
+        </trans-unit>
+        <trans-unit id="ELMaktabELAraby" translate="yes" xml:space="preserve">
+          <source>EL-Maktab EL-Araby</source>
+          <target state="translated">المكتب العربي</target>
+        </trans-unit>
+        <trans-unit id="ELSaify" translate="yes" xml:space="preserve">
+          <source>EL-Saify</source>
+          <target state="translated">الصيفي</target>
+        </trans-unit>
+        <trans-unit id="Environment" translate="yes" xml:space="preserve">
+          <source>Environment</source>
+          <target state="translated">بيئة</target>
+        </trans-unit>
+        <trans-unit id="Etfaa" translate="yes" xml:space="preserve">
+          <source>Etfaa</source>
+          <target state="translated">اطفاء</target>
+        </trans-unit>
+        <trans-unit id="ExternalQuarries" translate="yes" xml:space="preserve">
+          <source>External quarries</source>
+          <target state="translated">المحاجر الخارجية</target>
+        </trans-unit>
+        <trans-unit id="Ezz" translate="yes" xml:space="preserve">
+          <source>Ezz</source>
+          <target state="translated">عز</target>
+        </trans-unit>
+        <trans-unit id="FA" translate="yes" xml:space="preserve">
+          <source>FA</source>
+          <target state="new">FA</target>
+        </trans-unit>
+        <trans-unit id="FallingObjects" translate="yes" xml:space="preserve">
+          <source>Falling Objects</source>
+          <target state="translated">الأجسام المتساقطة</target>
+        </trans-unit>
+        <trans-unit id="Family" translate="yes" xml:space="preserve">
+          <source>Family</source>
+          <target state="translated">فاميلي</target>
+        </trans-unit>
+        <trans-unit id="Fatality" translate="yes" xml:space="preserve">
+          <source>Fatality</source>
+          <target state="translated">الوفاة</target>
+        </trans-unit>
+        <trans-unit id="FireHazard" translate="yes" xml:space="preserve">
+          <source>Fire Hazard</source>
+          <target state="translated">خطر الحريق</target>
+        </trans-unit>
+        <trans-unit id="FirstLine" translate="yes" xml:space="preserve">
+          <source>First Line</source>
+          <target state="translated">فرست لاين</target>
+        </trans-unit>
+        <trans-unit id="Fuel Station" translate="yes" xml:space="preserve">
+          <source>Fuel station</source>
+          <target state="translated">محطة وقود</target>
+        </trans-unit>
+        <trans-unit id="FuelStation" translate="yes" xml:space="preserve">
+          <source>Fuel Station</source>
+          <target state="translated">محطة وقود</target>
+        </trans-unit>
+        <trans-unit id="Future" translate="yes" xml:space="preserve">
+          <source>Future</source>
+          <target state="translated">المستقبل</target>
+        </trans-unit>
+        <trans-unit id="Global" translate="yes" xml:space="preserve">
+          <source>Global</source>
+          <target state="translated">جلوبال</target>
+        </trans-unit>
+        <trans-unit id="GypsumCrusher" translate="yes" xml:space="preserve">
+          <source>Gypsum crusher</source>
+          <target state="translated">كسارة الجبس</target>
+        </trans-unit>
+        <trans-unit id="Hama" translate="yes" xml:space="preserve">
+          <source>Hama</source>
+          <target state="translated">هما</target>
+        </trans-unit>
+        <trans-unit id="HiForce" translate="yes" xml:space="preserve">
+          <source>Hi Force</source>
+          <target state="translated">هاي فورس</target>
+        </trans-unit>
+        <trans-unit id="High" translate="yes" xml:space="preserve">
+          <source>High</source>
+          <target state="translated">عالي</target>
+        </trans-unit>
+        <trans-unit id="Horizon" translate="yes" xml:space="preserve">
+          <source>Horizon</source>
+          <target state="translated">هورايزن</target>
+        </trans-unit>
+        <trans-unit id="HR" translate="yes" xml:space="preserve">
+          <source>HR</source>
+          <target state="translated">الموارد البشرية</target>
+        </trans-unit>
+        <trans-unit id="IBS" translate="yes" xml:space="preserve">
+          <source>IBS</source>
+          <target state="translated">اي بي اس</target>
+        </trans-unit>
+        <trans-unit id="Igess" translate="yes" xml:space="preserve">
+          <source>Igess</source>
+          <target state="translated">اي جس</target>
+        </trans-unit>
+        <trans-unit id="ImproperDesign" translate="yes" xml:space="preserve">
+          <source>Improper Design</source>
+          <target state="translated">تصميم غير لائق</target>
+        </trans-unit>
+        <trans-unit id="ImproperErgonomics" translate="yes" xml:space="preserve">
+          <source>Improper Ergonomics</source>
+          <target state="translated">بيئة العمل غير الملائمة</target>
+        </trans-unit>
+        <trans-unit id="ImproperMissingOfBarricadingGuarding" translate="yes" xml:space="preserve">
+          <source>Improper/Missing Of Barricading  / Guarding</source>
+          <target state="translated">غير لائق /الحواجز  مفقودة </target>
+        </trans-unit>
+        <trans-unit id="ImproperWorkEnvironment" translate="yes" xml:space="preserve">
+          <source>Improper Work Environment</source>
+          <target state="translated">بيئة عمل غير لائقة</target>
+        </trans-unit>
+        <trans-unit id="IT" translate="yes" xml:space="preserve">
+          <source>IT</source>
+          <target state="translated">تكنولوجيا المعلومات</target>
+        </trans-unit>
+        <trans-unit id="LackOfInspection" translate="yes" xml:space="preserve">
+          <source>Lack Of Inspection</source>
+          <target state="translated">قلة التفتيش</target>
+        </trans-unit>
+        <trans-unit id="LackOfMaintenance" translate="yes" xml:space="preserve">
+          <source>Lack Of Maintenance</source>
+          <target state="translated">عدم وجود صيانة</target>
+        </trans-unit>
+        <trans-unit id="LackOfResources" translate="yes" xml:space="preserve">
+          <source>Lack Of Resources</source>
+          <target state="translated">نقص الموارد</target>
+        </trans-unit>
+        <trans-unit id="Legal" translate="yes" xml:space="preserve">
+          <source>Legal</source>
+          <target state="translated">قانوني</target>
+        </trans-unit>
+        <trans-unit id="LimeStoneCrusher" translate="yes" xml:space="preserve">
+          <source>Lime stone crusher</source>
+          <target state="translated">كسارة الحجر الجيري</target>
+        </trans-unit>
+        <trans-unit id="Low" translate="yes" xml:space="preserve">
+          <source>Low</source>
+          <target state="translated">منخفض</target>
+        </trans-unit>
+        <trans-unit id="LTI" translate="yes" xml:space="preserve">
+          <source>LTI</source>
+          <target state="translated">حادثة مسببة لغياب</target>
+        </trans-unit>
+        <trans-unit id="MainMazzotTank" translate="yes" xml:space="preserve">
+          <source>Main mazzot tank</source>
+          <target state="translated">خزان المازوت الرئيسي</target>
+        </trans-unit>
+        <trans-unit id="Mechanical" translate="yes" xml:space="preserve">
+          <source>Mechanical</source>
+          <target state="translated">ميكانيكي</target>
+        </trans-unit>
+        <trans-unit id="MechanicalWorkshop" translate="yes" xml:space="preserve">
+          <source>Mechanical workshop</source>
+          <target state="translated">ورشة ميكانيكية</target>
+        </trans-unit>
+        <trans-unit id="MedicalAdmin" translate="yes" xml:space="preserve">
+          <source>Medical Admin</source>
+          <target state="translated">الإدارة الطبية</target>
+        </trans-unit>
+        <trans-unit id="Medium" translate="yes" xml:space="preserve">
+          <source>Medium</source>
+          <target state="translated">وسط</target>
+        </trans-unit>
+        <trans-unit id="MobileEqup" translate="yes" xml:space="preserve">
+          <source>Mobile Equp.</source>
+          <target state="translated">العدات المتنقلة</target>
+        </trans-unit>
+        <trans-unit id="Mosque" translate="yes" xml:space="preserve">
+          <source>Mosque</source>
+          <target state="translated">المسجد</target>
+        </trans-unit>
+        <trans-unit id="MTC" translate="yes" xml:space="preserve">
+          <source>MTC</source>
+          <target state="translated">ام تي سي</target>
+        </trans-unit>
+        <trans-unit id="NabilAbbas" translate="yes" xml:space="preserve">
+          <source>Nabil Abbas</source>
+          <target state="translated">نبيل عباس</target>
+        </trans-unit>
+        <trans-unit id="NM" translate="yes" xml:space="preserve">
+          <source>NM</source>
+          <target state="translated">حادثة وشيكة (NM)</target>
+        </trans-unit>
+        <trans-unit id="NormalOperation" translate="yes" xml:space="preserve">
+          <source>Normal Operation</source>
+          <target state="translated">التشغيل الطبيعي</target>
+        </trans-unit>
+        <trans-unit id="Orbit" translate="yes" xml:space="preserve">
+          <source>Orbit</source>
+          <target state="translated">اوربت</target>
+        </trans-unit>
+        <trans-unit id="Other" translate="yes" xml:space="preserve">
+          <source>Other</source>
+          <target state="translated">اخري</target>
+        </trans-unit>
+        <trans-unit id="Packing" translate="yes" xml:space="preserve">
+          <source>Packing</source>
+          <target state="translated">التعبئة</target>
+        </trans-unit>
+        <trans-unit id="Palamatic" translate="yes" xml:space="preserve">
+          <source>Palamatic</source>
+          <target state="translated">بالاماتيك</target>
+        </trans-unit>
+        <trans-unit id="Plant_Management" translate="yes" xml:space="preserve">
+          <source>Plant_Management</source>
+          <target state="translated">إدارة المصنع</target>
+        </trans-unit>
+        <trans-unit id="PM" translate="yes" xml:space="preserve">
+          <source>PM</source>
+          <target state="translated">قسم الصيانة الوقائية</target>
+        </trans-unit>
+        <trans-unit id="PoorHousekeeping" translate="yes" xml:space="preserve">
+          <source>Poor Housekeeping</source>
+          <target state="translated">سوء النظافة</target>
+        </trans-unit>
+        <trans-unit id="PreBlendingArea" translate="yes" xml:space="preserve">
+          <source>Pre blending area</source>
+          <target state="translated">منطقة ما قبل الخلط</target>
+        </trans-unit>
+        <trans-unit id="PreheaterKiln" translate="yes" xml:space="preserve">
+          <source>Preheater/Kiln</source>
+          <target state="translated">البريهيتر/ الفرن</target>
+        </trans-unit>
+        <trans-unit id="Production" translate="yes" xml:space="preserve">
+          <source>Production</source>
+          <target state="translated">الانتاج</target>
+        </trans-unit>
+        <trans-unit id="Projects" translate="yes" xml:space="preserve">
+          <source>Projects</source>
+          <target state="translated">المشاريع</target>
+        </trans-unit>
+        <trans-unit id="Purchasing" translate="yes" xml:space="preserve">
+          <source>Purchasing</source>
+          <target state="translated">المشتريات</target>
+        </trans-unit>
+        <trans-unit id="Quality" translate="yes" xml:space="preserve">
+          <source>Quality</source>
+          <target state="translated">جودة</target>
+        </trans-unit>
+        <trans-unit id="Quarry" translate="yes" xml:space="preserve">
+          <source>Quarry</source>
+          <target state="translated">المحجر</target>
+        </trans-unit>
+        <trans-unit id="RawMill" translate="yes" xml:space="preserve">
+          <source>Raw mill</source>
+          <target state="translated">طاحونة الخام</target>
+        </trans-unit>
+        <trans-unit id="Sales" translate="yes" xml:space="preserve">
+          <source>Sales</source>
+          <target state="translated">المبيعات</target>
+        </trans-unit>
+        <trans-unit id="Samaras" translate="yes" xml:space="preserve">
+          <source>Samaras</source>
+          <target state="translated">سامارس</target>
+        </trans-unit>
+        <trans-unit id="SamaresWorkshop" translate="yes" xml:space="preserve">
+          <source>Samares Workshop</source>
+          <target state="translated">ورشة سامارس</target>
+        </trans-unit>
+        <trans-unit id="Security" translate="yes" xml:space="preserve">
+          <source>Security</source>
+          <target state="translated">الامن</target>
+        </trans-unit>
+        <trans-unit id="Senosy" translate="yes" xml:space="preserve">
+          <source>Senosy</source>
+          <target state="translated">السنوسي</target>
+        </trans-unit>
+        <trans-unit id="Shield" translate="yes" xml:space="preserve">
+          <source>Shield</source>
+          <target state="translated">شيلد</target>
+        </trans-unit>
+        <trans-unit id="ShutDown" translate="yes" xml:space="preserve">
+          <source>Shut Down</source>
+          <target state="translated">وقفة خط</target>
+        </trans-unit>
+        <trans-unit id="Site" translate="yes" xml:space="preserve">
+          <source>Site</source>
+          <target state="translated">الموقع</target>
+        </trans-unit>
+        <trans-unit id="Stores" translate="yes" xml:space="preserve">
+          <source>Stores</source>
+          <target state="translated">المخازن</target>
+        </trans-unit>
+        <trans-unit id="TechnicalBuilding" translate="yes" xml:space="preserve">
+          <source>Technical Building</source>
+          <target state="translated">مبنى الادارة الفنية</target>
+        </trans-unit>
+        <trans-unit id="Titan" translate="yes" xml:space="preserve">
+          <source>Titan</source>
+          <target state="translated">تيتان</target>
+        </trans-unit>
+        <trans-unit id="UnnecessaryScaf" translate="yes" xml:space="preserve">
+          <source>Unnecessary Scaf</source>
+          <target state="translated">سكاف غير ضروري</target>
+        </trans-unit>
+        <trans-unit id="UnsafeBehavior" translate="yes" xml:space="preserve">
+          <source>Unsafe_Behavior</source>
+          <target state="translated">سلوك غير آمن</target>
+        </trans-unit>
+        <trans-unit id="UnsafeCondition" translate="yes" xml:space="preserve">
+          <source>Unsafe_Condition</source>
+          <target state="translated">وضع غير آمنة</target>
+        </trans-unit>
+        <trans-unit id="UnsafeStorage" translate="yes" xml:space="preserve">
+          <source>Unsafe Storage</source>
+          <target state="translated">تخزين غير امن</target>
+        </trans-unit>
+        <trans-unit id="Utilities" translate="yes" xml:space="preserve">
+          <source>Utilities</source>
+          <target state="translated">خدمات</target>
+        </trans-unit>
+        <trans-unit id="Warehouse" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
+          <target state="translated">المخزن</target>
+        </trans-unit>
+        <trans-unit id="WaterStations" translate="yes" xml:space="preserve">
+          <source>Water Stations</source>
+          <target state="translated">محطة المياه</target>
+        </trans-unit>
+        <trans-unit id="WeldWear" translate="yes" xml:space="preserve">
+          <source>Weld&amp;Wear</source>
+          <target state="translated">ولد اند وير</target>
+        </trans-unit>
+        <trans-unit id="Yathreb" translate="yes" xml:space="preserve">
+          <source>Yathreb</source>
+          <target state="translated">يثرب</target>
+        </trans-unit>
+        <trans-unit id="MailToSafety" translate="yes" xml:space="preserve">
+          <source>Mail Sent To Safety Department</source>
+          <target state="translated">تم ارسال بريد الكتروني بقسم الامان والصحة</target>
+        </trans-unit>
+        <trans-unit id="Copy" translate="yes" xml:space="preserve">
+          <source>Copy</source>
+          <target state="translated">نسخ</target>
+        </trans-unit>
+        <trans-unit id="CopyToSchedules" translate="yes" xml:space="preserve">
+          <source>Copy To Schedules</source>
+          <target state="translated">نسخ لجدول الاعمال</target>
+        </trans-unit>
+        <trans-unit id="Past" translate="yes" xml:space="preserve">
+          <source>Past</source>
+          <target state="translated">لصق</target>
+        </trans-unit>
+        <trans-unit id="FullNameAr" translate="yes" xml:space="preserve">
+          <source>Full Arabic Name</source>
+          <target state="translated">الاسم الكامل بالعربي</target>
+        </trans-unit>
+        <trans-unit id="FullNameEn" translate="yes" xml:space="preserve">
+          <source>Full English Name</source>
+          <target state="translated">الاسم الكامل بالانجليزي</target>
+        </trans-unit>
+        <trans-unit id="Altitude" translate="yes" xml:space="preserve">
+          <source>Altitude</source>
+          <target state="translated">الارتفاع</target>
+        </trans-unit>
+        <trans-unit id="Latitude" translate="yes" xml:space="preserve">
+          <source>Latitude</source>
+          <target state="translated">خط العرض</target>
+        </trans-unit>
+        <trans-unit id="Longitude" translate="yes" xml:space="preserve">
+          <source>Longitude</source>
+          <target state="translated">خط الطول</target>
+        </trans-unit>
+        <trans-unit id="SetLocation" translate="yes" xml:space="preserve">
+          <source>Set Location</source>
+          <target state="translated">حدد المكان</target>
+        </trans-unit>
+        <trans-unit id="SchedulePerformance" translate="yes" xml:space="preserve">
+          <source>Schedule Performance</source>
+          <target state="translated">اداء المهام المجدولة</target>
+        </trans-unit>
+        <trans-unit id="Back_Restore" translate="yes" xml:space="preserve">
+          <source>Back\Restore</source>
+          <target state="translated">احتياطي/استعادة</target>
+        </trans-unit>
+        <trans-unit id="Defaults" translate="yes" xml:space="preserve">
+          <source>Defaults</source>
+          <target state="translated">البيانات الافتراضية</target>
+        </trans-unit>
+        <trans-unit id="SaveSchedule" translate="yes" xml:space="preserve">
+          <source>Save Schedule</source>
+          <target state="translated">حفظ المهام المجدولة</target>
+        </trans-unit>
+        <trans-unit id="NetworkWaiting" translate="yes" xml:space="preserve">
+          <source>Waiting for network</source>
+          <target state="translated">في انتظارالاتصال بالشبكة</target>
+        </trans-unit>
+        <trans-unit id="Connected" translate="yes" xml:space="preserve">
+          <source>Internet Connected </source>
+          <target state="translated">متصل بالإنترنت</target>
+        </trans-unit>
+        <trans-unit id="Connectionloss" translate="yes" xml:space="preserve">
+          <source>Connection Loss</source>
+          <target state="translated">فقدان الاتصال</target>
+        </trans-unit>
+        <trans-unit id="ClearAll" translate="yes" xml:space="preserve">
+          <source>Clear All</source>
+          <target state="translated">تصفية الكل</target>
+        </trans-unit>
+        <trans-unit id="ClearDone" translate="yes" xml:space="preserve">
+          <source>Clear Done</source>
+          <target state="translated">تصفية المنتهي</target>
+        </trans-unit>
+        <trans-unit id="Analysis" translate="yes" xml:space="preserve">
+          <source>Analysis</source>
+          <target state="translated">تحليل</target>
+        </trans-unit>
+        <trans-unit id="ReportAnalysis" translate="yes" xml:space="preserve">
+          <source>Report Analysis</source>
+          <target state="translated">تقرير تحليلي</target>
+        </trans-unit>
+        <trans-unit id="GetSiteData" translate="yes" xml:space="preserve">
+          <source>Get Site Data</source>
+          <target state="new">Get Site Data</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

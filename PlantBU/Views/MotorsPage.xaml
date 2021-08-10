@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlantBU.Views.MotorsPage"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             xmlns:resource="clr-namespace:PlantBU.Properties" 
+             Title="{x:Static resource:Resources.Motors}">
+    <ContentPage.BindingContext>
+        <local:MotorsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+             <SearchBar   x:Name="searchBar" TextChanged="OnFilterTextChanged" TextColor="Black"/>
+            <Label    Text="{Binding Motors.Count,StringFormat= '{}Total {0} Motors'}" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black" Padding="10,0,0,0"/>
+            <sync:SfListView x:Name="listView" 
+                                     ItemsSource="{Binding Motors}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                     VerticalOptions="FillAndExpand" 
+                                     AutoFitMode="DynamicHeight">
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame x:Name="frame" >
+                                    <StackLayout>
+                                        <Label  Text="{Binding Code}"/>
+                                        <Label  Text="{Binding Description}" LineBreakMode="TailTruncation" />
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Power,StringFormat='\{0\} Kw'}" />
+                                            <Label Text="{Binding RPM,StringFormat='\{0\} rpm'}"  />
+                                            <Label Text="{Binding Brand}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+            </sync:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             x:Class="PlantBU.Views.BudgetPage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+             Title="{x:Static resource:Resources.Budget}" >
+    <ContentPage.BindingContext>
+        <local:BudgetViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Add" Text="{x:Static resource:Resources.Add}" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="BudgetExpense" Text="{x:Static resource:Resources.BudgetAnalysis}" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar          x:Name="searchBar"
+                                    TextChanged="OnFilterTextChanged" />
+            <sync:SfListView ItemsSource="{Binding Budgetitems}" 
+                          x:Name="listView" 
+                         HoldCommand="{Binding ListViewHoldingCommand}"                    
+                          AutoFitMode="DynamicHeight" 
+                             IsScrollingEnabled="True">
+
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame x:Name="frame" >
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label                   Text="{Binding Title}"  LineBreakMode="TailTruncation" />
+                                    <Label  Grid.Row="1"  Text="{Binding  Description}" LineBreakMode="TailTruncation" />
+                                    <Label  Grid.Column="1"  Text="{Binding  Value}" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+                <sync:SfListView.DataSource>
+                    <data:DataSource>
+                        <data:DataSource.SortDescriptors>
+                            <data:SortDescriptor PropertyName="Value" Direction="Descending"/>
+                        </data:DataSource.SortDescriptors>
+                    </data:DataSource>
+                </sync:SfListView.DataSource>
+            </sync:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

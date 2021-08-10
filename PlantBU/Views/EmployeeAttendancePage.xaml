@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms.Renderers;assembly=Syncfusion.SfDataGrid.XForms" 
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             x:Class="PlantBU.Views.EmployeeAttendancePage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+             Title="{x:Static resource:Resources.EmployeeAttendance}">
+    <ContentPage.Content>
+        <StackLayout>
+            <syncfusion:SfDatePicker x:Name="AttendancePicker" 
+                                     HorizontalOptions="CenterAndExpand"
+                                     Format="MM_yyyy"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

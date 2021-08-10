@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:pulltoRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+    xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+    x:Class="PlantBU.Views.EquipmentsPage"
+    xmlns:local="clr-namespace:PlantBU.ViewModels"
+    xmlns:local1="clr-namespace:PlantBU.Views"
+    xmlns:local3="clr-namespace:PlantBU.Behaviors"
+    Title="Equipments">
+
+    <ContentPage.ToolbarItems BackgroundColor="{x:StaticResource Primary}">
+        <ToolbarItem Text="New" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:EquipmentsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <local3:EquipmentsBehavior />
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <x:Array Type="{x:Type x:String}" x:Key="PickerList" xmlns:sys="clr-namespace:System;assembly=mscorlib" >
+            <sys:String>Area</sys:String>
+            <sys:String>Code</sys:String>
+            <sys:String>Description</sys:String>
+        </x:Array>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <SearchBar 
+                                   SearchCommand="{Binding SearchCommand}" 
+                                   SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}">
+                    <SearchBar.Behaviors>
+                        <local1:TextChangedBehavior />
+                    </SearchBar.Behaviors>
+                </SearchBar>
+                <Picker x:Name="ColumnsList" 
+                         SelectedItem="{Binding PickerSelected}" 
+                         ItemsSource="{StaticResource PickerList}"/>
+            </StackLayout>
+            <pulltoRefresh:SfPullToRefresh  
+                                           IsRefreshing="{Binding IsRefreshing}"
+                                           x:Name="pullToRefresh">
+                <pulltoRefresh:SfPullToRefresh.ProgressStrokeWidth>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <OnPlatform.WinPhone>2</OnPlatform.WinPhone>
+                        <OnPlatform.Android>6</OnPlatform.Android>
+                        <OnPlatform.iOS>2</OnPlatform.iOS>
+                    </OnPlatform>
+                </pulltoRefresh:SfPullToRefresh.ProgressStrokeWidth >
+                <pulltoRefresh:SfPullToRefresh.PullableContent>
+
+                    <sync:SfListView x:Name="listView"
+                                     ItemsSource="{Binding Equipments}"
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}"
+                                     SelectedItem ="{Binding ListViewSelectedItem,Mode=TwoWay}">
+                        <sync:SfListView.LeftSwipeTemplate>
+                            <DataTemplate>
+                                <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+                                    <buttons:SfButton Text="Edit"   Style="{StaticResource SfButtonListViewSwipView}" />
+                                    <buttons:SfButton Text="Delete" Style="{StaticResource SfButtonListViewSwipView}" />
+                                </Grid>
+                            </DataTemplate>
+                        </sync:SfListView.LeftSwipeTemplate>
+                        <sync:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Code}" Style="{StaticResource LabelList0}"  />
+                                        <Label Grid.Row="1"  Text="{Binding Description}" Style="{StaticResource LabelList1}" />
+                                        <Label Grid.Column="1"  Text="{Binding Shop}" Style="{StaticResource LabelList2}" />
+                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding ShopExtra}" Style="{StaticResource LabelList2}" />
+                                        <BoxView Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.4" BackgroundColor="#DFDEE3" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </sync:SfListView.ItemTemplate>
+                        <sync:SfListView.DataSource>
+                            <data:DataSource>
+                                <data:DataSource.GroupDescriptors>
+                                    <data:GroupDescriptor PropertyName="ShopExtra"  />
+                                </data:DataSource.GroupDescriptors>
+                            </data:DataSource>
+                        </sync:SfListView.DataSource>
+                    </sync:SfListView>
+                </pulltoRefresh:SfPullToRefresh.PullableContent>
+
+            </pulltoRefresh:SfPullToRefresh>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
+    
+    

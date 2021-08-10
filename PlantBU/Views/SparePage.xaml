@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms" 
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="PlantBU.Views.SparePage"
+             xmlns:resource="clr-namespace:PlantBU.Properties"
+            Title="{x:Static resource:Resources.Spare}">
+    <ContentPage.BindingContext>
+        <local:SpareViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <x:Array Type="{x:Type x:String}" x:Key="MotorSearchPickerList" xmlns:sys="clr-namespace:System;assembly=mscorlib" >
+            <sys:String>Code</sys:String>
+            <sys:String>Description</sys:String>
+            <sys:String>Power</sys:String>
+            <sys:String>Speed</sys:String>
+
+        </x:Array>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems   >
+        <ToolbarItem Name="AddMotor" Order="Secondary" Text="{x:Static resource:Resources.Add}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+
+            <ScrollView >
+                <StackLayout >
+                    <syncfusion:SfExpander >
+                        <syncfusion:SfExpander.Header>
+                            <Label Text="{x:Static resource:Resources.BasicData}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                            <StackLayout>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Code}"/>
+                                        <Label Text="{Binding Spare.Code}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Description1}"/>
+                                    <Label Text="{Binding Spare.Description1}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                <StackLayout >
+                                        <Label Text="{x:Static resource:Resources.Description2}"/>
+                                    <Label Text="{Binding Spare.Description2}"/>
+                                </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander >
+                        <syncfusion:SfExpander.Header>
+                            <Label Text="{x:Static resource:Resources.Details}"    VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                            <StackLayout>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Brand}"/>
+                                        <Label Text="{Binding Spare.Brand}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.BrandType}"/>
+                                        <Label Text="{Binding Spare.BrandType}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.OnHand}"/>
+                                        <Label Text="{Binding Spare.OnHand}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Location}"/>
+                                        <Label Text="{Binding Spare.Location}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Unit}"/>
+                                        <Label Text="{Binding Spare.Unit}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.Value}"/>
+                                        <Label Text="{Binding Spare.Value}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.MinQty}"/>
+                                        <Label Text="{Binding Spare.MinQty}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.TrackItem}"/>
+                                        <Label Text="{Binding Spare.TrackItem}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label Text="{x:Static resource:Resources.ExtraData}"/>
+                                        <Label Text="{Binding Spare.ExtraData}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+                    <syncfusion:SfExpander >
+                        <syncfusion:SfExpander.Header>
+                            <Label Text="Using Components"    VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0" />
+                        </syncfusion:SfExpander.Header>
+                        <syncfusion:SfExpander.Content>
+                            <ScrollView >
+                                <sync:SfListView x:Name="listView" 
+                                     ItemsSource="{Binding RelatedItems}"   
+                                     TapCommand="{Binding ListViewTappedCommand}"
+                                     HoldCommand="{Binding ListViewHoldingCommand}" 
+                                                 AutoFitMode="DynamicHeight">
+
+                                    <sync:SfListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame>
+                                                <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding Code}"  />
+                                                        <Label   Text="{Binding Description}" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </sync:SfListView.ItemTemplate>
+                                </sync:SfListView>
+                            </ScrollView>
+                        </syncfusion:SfExpander.Content>
+                    </syncfusion:SfExpander>
+
+                </StackLayout>
+            </ScrollView>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator" Title="{x:Static resource:Resources.Wait}" AnimationType="Cupertino" IsBusy="{Binding IsBusy}" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

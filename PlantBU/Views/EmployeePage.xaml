@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             x:Class="PlantBU.Views.EmployeePage" 
+             xmlns:resource="clr-namespace:PlantBU.Properties" xmlns:syncfusion2="clr-namespace:Syncfusion.SfDataGrid.XForms.Renderers;assembly=Syncfusion.SfDataGrid.XForms"
+             Title="{x:Static resource:Resources.Employee}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Attendance" Text="{x:Static resource:Resources.Attendance}"  Order="Secondary"/>
+        <ToolbarItem x:Name="SafetyReports" Text="{x:Static resource:Resources.SafetyReports}"  Order="Secondary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Code}" />
+                        <Editor    x:Name="CodeEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                        <StackLayout>
+                        <Label Text="{x:Static resource:Resources.FirstName}" />
+                            <Editor    x:Name="FirstNameEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.LastName}"/>
+                        <Editor    x:Name="LastNameEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.FullNameAr}"/>
+                        <Editor    x:Name="FullNameArEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.FullNameEn}"/>
+                        <Editor    x:Name="FullNameEnEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.BirthDate}"/>
+                        <syncfusion2:SfDatePicker x:Name="BirthDatePicker" 
+                                          HorizontalOptions="FillAndExpand" 
+                                          DateSelected="datefromPicker_DateSelected"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Title}"/>
+                        <combobox:SfComboBox HeightRequest="40" 
+                                             x:Name="comboBox" 
+                                             IsEditableMode="False" 
+                                             ValueChanged="Editor_TextChanged" 
+                                             HorizontalOptions="FillAndExpand">
+                            <combobox:SfComboBox.ComboBoxSource>
+                                <ListCollection:List x:TypeArguments="x:String">
+                                    <x:String>Manager</x:String>
+                                    <x:String>Engineer</x:String>
+                                    <x:String>Supervisor</x:String>
+                                    <x:String>Technician</x:String>
+                                    <x:String>Labor</x:String>
+                                </ListCollection:List>
+                            </combobox:SfComboBox.ComboBoxSource>
+                        </combobox:SfComboBox>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.UserName}"/>
+                        <Editor    x:Name="UserNameEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+               
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Email}" />
+                        <Editor    x:Name="EmailEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{x:Static resource:Resources.Password}" />
+                        <Editor    x:Name="PassWordEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" 
+             xmlns:syncfusion2="clr-namespace:Syncfusion.SfDataGrid.XForms.Renderers;assembly=Syncfusion.SfDataGrid.XForms" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels"
+             x:Class="PlantBU.Views.SchedulePage"
+             x:Name="page"
+             xmlns:resource="clr-namespace:PlantBU.Properties" xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms" xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable" xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             Title="{x:Static resource:Resources.Schedule}">
+    <ContentPage.BindingContext>
+        <local:ScheduleViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.Schedule}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout >
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.Shop}"/>
+                                    <combobox:SfComboBox x:Name="ShopcomboBox" 
+                                                         SelectionChanged="ComboBox_SelectionChanged"
+                                                         DataSource="{Binding ShopList}"
+                                                         DisplayMemberPath="ShopName"
+                                                         TabIndex="5">
+                                        <combobox:SfComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding ShopName}" TextColor="{StaticResource TextBlack}" />
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </combobox:SfComboBox.ItemTemplate>
+                                    </combobox:SfComboBox>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.Code}" />
+                                    <autocomplete:SfAutoComplete   x:Name="SheduleItemAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                            SuggestionBoxPlacement="Bottom"                       
+                                            DataSource="{Binding ScheduleItems}"
+                                            ItemsSource="{Binding ScheduleItems}"
+                                            DisplayMemberPath="Code" 
+                                            HorizontalOptions="FillAndExpand"
+                                            SelectionChanged="AutoComplete_SelectionChanged">
+                                        <autocomplete:SfAutoComplete.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding Code}" VerticalOptions="Center"  TextColor="{StaticResource TextBlack}" />
+                                                    <Label Text="{Binding Description}" VerticalOptions="Center"  TextColor="{StaticResource TextBlack}" />
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </autocomplete:SfAutoComplete.ItemTemplate>
+                                    </autocomplete:SfAutoComplete>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.Description}"/>
+                                    <Editor    x:Name="SheduleItemDescriptionEditor" 
+                                            HorizontalOptions="FillAndExpand" 
+                           TextChanged="Editor_TextChanged"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.Assignee}" />
+                                    <combobox:SfComboBox x:Name="AssigneecomboBox" 
+                                                         SelectionChanged="ComboBox_SelectionChanged"  
+                                                         DataSource="{Binding Assignees}"
+                                                         ItemsSource="{Binding Assignees}"
+                                                         SelectedItem="{Binding Schedule.AssigneeCompanyCode}"
+                                                         DisplayMemberPath="FullNameAr"
+                                                         TextColor="Black"
+                                                         TabIndex="5">
+                                        <combobox:SfComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                                                    <Label Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" TextColor="{StaticResource TextBlack}"/>
+                                                    <Label Text="{Binding LastName}" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource TextBlack}"/>
+                                                </StackLayout>
+
+                                            </DataTemplate>
+                                        </combobox:SfComboBox.ItemTemplate>
+                                    </combobox:SfComboBox>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.Repair}"/>
+                                    <autocomplete:SfAutoComplete   x:Name="RepairAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                           SuggestionBoxPlacement="Bottom"                       
+                                            DataSource="{Binding repairs}"
+                                            HorizontalOptions="FillAndExpand"
+                                            ValueChanged="RepairAutoComplete_ValueChanged"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.RepairDetails}"/>
+                                    <Editor    x:Name="RepairDetailsAutoComplete" 
+                           TextChanged="Editor_TextChanged"
+                                           HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.Cost}"/>
+                                    <Editor    x:Name="CostEditor" 
+                                            HorizontalOptions="FillAndExpand" TextChanged="Editor_TextChanged"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.Date}"/>
+                                    <syncfusion2:SfDatePicker x:Name="datePicker"
+                                                              MinimumDate="1/1/2020"
+                                          HorizontalOptions="CenterAndExpand" 
+                                          IsEnabled="False"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.DateStart}"/>
+                                    <syncfusion2:SfDatePicker x:Name="datefromPicker" 
+                                          HorizontalOptions="CenterAndExpand" 
+                                          DateSelected="datefromPicker_DateSelected"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.DateEnd}" />
+                                    <syncfusion2:SfDatePicker x:Name="dateToPicker" 
+                                                              MinimumDate="1/1/2020"
+                                          HorizontalOptions="CenterAndExpand" 
+                                          DateSelected="datefromPicker_DateSelected"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame>
+                                <StackLayout >
+                                    <Label Text="{x:Static resource:Resources.ExtraData}"/>
+                                    <Editor    x:Name="ExtraDataEditor" 
+                                            TextChanged="Editor_TextChanged"
+                                            HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Label Text="{x:Static resource:Resources.SpareParts}"   VerticalTextAlignment="Center" FontSize="25" Padding="5,0,0,0"/>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <StackLayout>
+                            <Frame>
+                                <StackLayout>
+                                    <Label Text="{x:Static resource:Resources.InventorySelect}"/>
+                                    <FlexLayout >
+                                        <autocomplete:SfAutoComplete   
+                                                FlexLayout.Grow="80" 
+                                                x:Name="InventoryAutoComplete" 
+                                            AutoCompleteMode="SuggestAppend"     
+                                            SuggestionMode="Contains"
+                                            HighlightedTextFontAttributes="Bold"
+                                            TextHighlightMode="MultipleOccurrence"                       
+                                            NoResultsFoundText="Not Found"
+                                           SuggestionBoxPlacement="Bottom"                       
+                                            DataSource="{Binding InventoryList}"
+                                            ItemsSource="{Binding InventoryList}"
+                                            DisplayMemberPath="code">
+                                            <autocomplete:SfAutoComplete.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding code}" VerticalOptions="Center"  TextColor="Black" />
+                                                        <Label Text="{Binding description1}" VerticalOptions="Center"  TextColor="Black"     />
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </autocomplete:SfAutoComplete.ItemTemplate>
+                                        </autocomplete:SfAutoComplete>
+                                        <Entry    x:Name="QtyEntry" Placeholder="Qty"/>
+                                        <Button FlexLayout.Grow="20"  Text="{x:Static resource:Resources.Set}" Clicked="SetSpare_Clicked" FontAttributes="Bold" Margin="10,0,0,0"/>
+                                    </FlexLayout>
+                                </StackLayout>
+                            </Frame>
+                            <sync:SfListView 
+                                ItemsSource="{Binding Schedule.SpareParts}" 
+                          x:Name="listView" 
+                         HoldCommand="{Binding ListViewHoldingCommand}"                    
+                          AutoFitMode="DynamicHeight">
+
+                                <sync:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Frame>
+                                                <StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label    Text="{Binding InventoryCode}" FontAttributes="Bold" />
+                                                            <Label    Text="{Binding Description1}" FontAttributes="Italic"/>
+                                                            <StackLayout Orientation="Horizontal"  >
+                                                                <Label Text="{Binding QtyRequired,StringFormat= '{} QTY:{0} '}" FontAttributes="Italic" />
+                                                                <Label Text="{Binding Value,StringFormat= '{} {0}EGP'}" FontAttributes="Italic"/>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                 
+                                                </StackLayout>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </sync:SfListView.ItemTemplate>
+                                <sync:SfListView.DataSource>
+                                    <data:DataSource>
+                                        <data:DataSource.SortDescriptors>
+                                            <data:SortDescriptor PropertyName="InventoryCode" Direction="Ascending"/>
+                                        </data:DataSource.SortDescriptors>
+                                    </data:DataSource>
+                                </sync:SfListView.DataSource>
+                            </sync:SfListView>
+                        </StackLayout>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

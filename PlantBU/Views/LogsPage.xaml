@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PlantBU.ViewModels" 
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:data="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             x:Class="PlantBU.Views.LogsPage"
+            x:Name="LogsPageRef"
+             xmlns:resource="clr-namespace:PlantBU.Properties" xmlns:converters="clr-namespace:PlantBU.Utilities"
+             Title="{x:Static resource:Resources.Logs}">
+    <ContentPage.BindingContext>
+        <local:LogsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="Add" Text="{x:Static resource:Resources.Add}" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <local:ZeroValueConverter x:Key="ZeroValueConverter"/>
+        <converters:EmployeeCodeToEmployeeFirstNameConverter x:Key="EmployeeCodeToEmployeeFirstNameConverter"/>
+        <converters:EmployeeCodeToEmployeeLastNameConverter x:Key="EmployeeCodeToEmployeeLastNameConverter"/>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar          x:Name="searchBar"     TextChanged="OnFilterTextChanged"  TextColor="Black" />
+            <sync:SfListView ItemsSource="{Binding Logs}" 
+                          x:Name="listView" 
+                             TapCommand="{Binding ListViewTappedCommand}"    
+                         HoldCommand="{Binding ListViewHoldingCommand}"       
+                          AllowSwiping="True"
+                          IsStickyGroupHeader ="True"
+                          AllowGroupExpandCollapse ="True"
+                          AutoFitMode="DynamicHeight">
+                <sync:SfListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="{StaticResource Secondary}" HeightRequest="45"  >
+                            <Label Text="{Binding  LogsCount,StringFormat='{0}'}" FontAttributes="Bold" Margin="10,10,0,0">
+                                <Label.BindingContext>
+                                    <local:LogsViewModel/>
+                                </Label.BindingContext>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </sync:SfListView.HeaderTemplate>
+
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding ItemCode}" FontAttributes="Bold" />
+                                        <Label Text="{Binding ItemDescription}" FontAttributes="Italic"  />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label  Text="{Binding DateLog, StringFormat='{0:MMMM dd}'}" FontAttributes="Italic" VerticalOptions="Start" LineBreakMode="TailTruncation" />
+                                        <Label Text="{Binding Repair, StringFormat='({0})'}" FontAttributes="Italic" VerticalOptions="End" LineBreakMode="TailTruncation"  />
+                                        <Label    Text="{Binding AssigneeCompanyCode , Converter={StaticResource EmployeeCodeToEmployeeFirstNameConverter}}" LineBreakMode="NoWrap"/>
+                                        <Label    Text="{Binding AssigneeCompanyCode , Converter={StaticResource EmployeeCodeToEmployeeLastNameConverter}}" LineBreakMode="TailTruncation"/>
+
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+                <sync:SfListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" 
+                                         HorizontalOptions="Start"
+                                         VerticalOptions="Center" >
+                            <Label Text="{Binding  Key, StringFormat='{}{0: yy,  MM}'}" TextColor="Black" FontAttributes="Bold" FontSize="Subtitle"/>
+                            <Label Text="{Binding Count,StringFormat= '( {0} )' }" FontAttributes="Bold" TextColor="Black" />
+
+                        </StackLayout>
+                    </DataTemplate>
+                </sync:SfListView.GroupHeaderTemplate>
+                <sync:SfListView.DataSource>
+                    <data:DataSource>
+                        <data:DataSource.SortDescriptors>
+                            <data:SortDescriptor PropertyName="DateLog" Direction="Ascending"/>
+                        </data:DataSource.SortDescriptors>
+                    </data:DataSource>
+                </sync:SfListView.DataSource>
+            </sync:SfListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
