@@ -1,0 +1,46 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Description1": {
+            "bsonType": "string"
+        },
+        "Description2": {
+            "bsonType": "string"
+        },
+        "EGPValue": {
+            "bsonType": "double"
+        },
+        "ItemType": {
+            "bsonType": "string"
+        },
+        "PartCode": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "QtyContracted": {
+            "bsonType": "double"
+        },
+        "QtyUsed": {
+            "bsonType": "double"
+        },
+        "Unit": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "EGPValue",
+        "QtyContracted",
+        "QtyUsed"
+    ],
+    "title": "ContractItem"
+}

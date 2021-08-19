@@ -1,0 +1,45 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "ContractNo": {
+            "bsonType": "string"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "Number": {
+            "bsonType": "string"
+        },
+        "PartCode": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Settled": {
+            "bsonType": "bool"
+        },
+        "Type": {
+            "bsonType": "string"
+        },
+        "Value": {
+            "bsonType": "double"
+        },
+        "VendorCode": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "Value",
+        "Settled"
+    ],
+    "title": "PurchaseOrder"
+}

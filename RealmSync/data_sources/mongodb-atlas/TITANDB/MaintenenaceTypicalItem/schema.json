@@ -1,0 +1,25 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Details": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "TypicalName": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "MaintenenaceTypicalItem"
+}

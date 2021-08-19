@@ -1,0 +1,20 @@
+{
+    "Logs": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Log",
+        "source_key": "Logs",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Schedules": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Schedule",
+        "source_key": "Schedules",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "SpareParts": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/SparePart",
+        "source_key": "SpareParts",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

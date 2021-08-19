@@ -1,0 +1,31 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Public": {
+            "bsonType": "string"
+        },
+        "SafetyReports": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "SafetyRisks": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "Safety"
+}

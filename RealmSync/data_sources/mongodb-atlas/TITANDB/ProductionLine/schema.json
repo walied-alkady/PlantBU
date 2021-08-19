@@ -1,0 +1,43 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Code": {
+            "bsonType": "string"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "Equipments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "ExtraData": {
+            "bsonType": "string"
+        },
+        "LineNo": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Shops": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "ProductionLine"
+}

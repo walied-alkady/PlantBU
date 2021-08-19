@@ -1,0 +1,40 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Description": {
+            "bsonType": "string"
+        },
+        "Items": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "VendorCode": {
+            "bsonType": "string"
+        },
+        "VendorDescription": {
+            "bsonType": "string"
+        },
+        "VendorName": {
+            "bsonType": "string"
+        },
+        "VendorType": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "Contract"
+}

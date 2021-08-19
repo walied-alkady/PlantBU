@@ -1,0 +1,14 @@
+{
+    "SafetyReports": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/SafetyReport",
+        "source_key": "SafetyReports",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "SafetyRisks": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/SafetyRisk",
+        "source_key": "SafetyRisks",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

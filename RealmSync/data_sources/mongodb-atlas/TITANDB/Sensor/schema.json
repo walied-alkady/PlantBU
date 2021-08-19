@@ -1,0 +1,95 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Brand": {
+            "bsonType": "string"
+        },
+        "BrandType": {
+            "bsonType": "string"
+        },
+        "Code": {
+            "bsonType": "string"
+        },
+        "Communication": {
+            "bsonType": "string"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "ExtraData": {
+            "bsonType": "string"
+        },
+        "GalvanicIsolation": {
+            "bsonType": "string"
+        },
+        "InstrumentType": {
+            "bsonType": "string"
+        },
+        "LimitH": {
+            "bsonType": "double"
+        },
+        "LimitHH": {
+            "bsonType": "double"
+        },
+        "LimitL": {
+            "bsonType": "double"
+        },
+        "LimitLL": {
+            "bsonType": "double"
+        },
+        "Logs": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "OperationalUnit": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "ScaleRange": {
+            "bsonType": "string"
+        },
+        "Schedules": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "SignalType": {
+            "bsonType": "string"
+        },
+        "Softawre": {
+            "bsonType": "string"
+        },
+        "SpareParts": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "SupplyVoltage": {
+            "bsonType": "string"
+        },
+        "Wiring": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "LimitHH",
+        "LimitH",
+        "LimitL",
+        "LimitLL"
+    ],
+    "title": "Sensor"
+}

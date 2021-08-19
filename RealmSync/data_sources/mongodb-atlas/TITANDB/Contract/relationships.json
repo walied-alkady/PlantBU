@@ -1,0 +1,8 @@
+{
+    "Items": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/ContractItem",
+        "source_key": "Items",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "id": "611a7f68c39ae2835f534bf2",
+    "name": "GreaseSchedule",
+    "type": "SCHEDULED",
+    "config": {
+        "schedule": "0 0 1 * *"
+    },
+    "function_name": "UpdateMotorGrease",
+    "disabled": false
+}

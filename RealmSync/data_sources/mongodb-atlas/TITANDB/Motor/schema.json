@@ -1,0 +1,152 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "BearingDE": {
+            "bsonType": "string"
+        },
+        "BearingNDE": {
+            "bsonType": "string"
+        },
+        "Brand": {
+            "bsonType": "string"
+        },
+        "BrandType": {
+            "bsonType": "string"
+        },
+        "Code": {
+            "bsonType": "string"
+        },
+        "ConnectionType": {
+            "bsonType": "string"
+        },
+        "Cooling": {
+            "bsonType": "string"
+        },
+        "CosPhi": {
+            "bsonType": "double"
+        },
+        "Current": {
+            "bsonType": "double"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "Duty": {
+            "bsonType": "string"
+        },
+        "Effeciency": {
+            "bsonType": "double"
+        },
+        "ExtraData": {
+            "bsonType": "string"
+        },
+        "FrameSize": {
+            "bsonType": "string"
+        },
+        "FrameSizeA": {
+            "bsonType": "long"
+        },
+        "FrameSizeB": {
+            "bsonType": "long"
+        },
+        "FrameSizeD": {
+            "bsonType": "long"
+        },
+        "FrameSizeE": {
+            "bsonType": "long"
+        },
+        "FrameSizeH": {
+            "bsonType": "long"
+        },
+        "Frequency": {
+            "bsonType": "double"
+        },
+        "GreaseBrand": {
+            "bsonType": "string"
+        },
+        "GreaseBrandType": {
+            "bsonType": "string"
+        },
+        "IP": {
+            "bsonType": "long"
+        },
+        "IntervalDays": {
+            "bsonType": "double"
+        },
+        "Mounting": {
+            "bsonType": "string"
+        },
+        "Poles": {
+            "bsonType": "long"
+        },
+        "Power": {
+            "bsonType": "double"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "QtyDE": {
+            "bsonType": "double"
+        },
+        "QtyNDE": {
+            "bsonType": "double"
+        },
+        "RPM": {
+            "bsonType": "double"
+        },
+        "SpareParts": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "SupplyPanel": {
+            "bsonType": "string"
+        },
+        "ThermalClass": {
+            "bsonType": "string"
+        },
+        "Volt": {
+            "bsonType": "double"
+        },
+        "Weight": {
+            "bsonType": "double"
+        },
+        "WeightRotor": {
+            "bsonType": "double"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        },
+        "supplyPanelLoc": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "Power",
+        "Frequency",
+        "Poles",
+        "Volt",
+        "Current",
+        "RPM",
+        "CosPhi",
+        "Effeciency",
+        "FrameSizeA",
+        "FrameSizeB",
+        "FrameSizeH",
+        "FrameSizeD",
+        "FrameSizeE",
+        "IP",
+        "IntervalDays",
+        "QtyDE",
+        "QtyNDE",
+        "Weight",
+        "WeightRotor"
+    ],
+    "title": "Motor"
+}

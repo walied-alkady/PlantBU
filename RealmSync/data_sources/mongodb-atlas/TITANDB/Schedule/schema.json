@@ -1,0 +1,69 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Area": {
+            "bsonType": "string"
+        },
+        "AssigneeCompanyCode": {
+            "bsonType": "string"
+        },
+        "AssigneeDoneCompanyCode": {
+            "bsonType": "string"
+        },
+        "DateScheduleFrom": {
+            "bsonType": "date"
+        },
+        "DateScheduleTo": {
+            "bsonType": "date"
+        },
+        "ItemCode": {
+            "bsonType": "string"
+        },
+        "ItemDescription": {
+            "bsonType": "string"
+        },
+        "Notes": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Repair": {
+            "bsonType": "string"
+        },
+        "RepairCost": {
+            "bsonType": "double"
+        },
+        "Repairdetails": {
+            "bsonType": "string"
+        },
+        "SetDate": {
+            "bsonType": "date"
+        },
+        "SpareParts": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "StatusSchedule": {
+            "bsonType": "bool"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "RepairCost",
+        "SetDate",
+        "DateScheduleFrom",
+        "DateScheduleTo",
+        "StatusSchedule"
+    ],
+    "title": "Schedule"
+}

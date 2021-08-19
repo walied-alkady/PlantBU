@@ -1,0 +1,39 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "DateBudgetItem": {
+            "bsonType": "date"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "ItemType": {
+            "bsonType": "string"
+        },
+        "PartCode": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Title": {
+            "bsonType": "string"
+        },
+        "Value": {
+            "bsonType": "double"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "Value",
+        "DateBudgetItem"
+    ],
+    "title": "BudgetItem"
+}

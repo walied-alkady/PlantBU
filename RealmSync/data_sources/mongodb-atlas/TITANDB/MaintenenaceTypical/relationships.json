@@ -1,0 +1,8 @@
+{
+    "MaintenenaceTypicalsItems": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/MaintenenaceTypicalItem",
+        "source_key": "MaintenenaceTypicalsItems",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

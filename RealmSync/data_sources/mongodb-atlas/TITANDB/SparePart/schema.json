@@ -1,0 +1,35 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Description1": {
+            "bsonType": "string"
+        },
+        "Description2": {
+            "bsonType": "string"
+        },
+        "InventoryCode": {
+            "bsonType": "string"
+        },
+        "ItemCode": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "QtyRequired": {
+            "bsonType": "double"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "QtyRequired"
+    ],
+    "title": "SparePart"
+}

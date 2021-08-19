@@ -1,0 +1,25 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Public": {
+            "bsonType": "string"
+        },
+        "ShopDescription": {
+            "bsonType": "string"
+        },
+        "ShopName": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "Shop"
+}

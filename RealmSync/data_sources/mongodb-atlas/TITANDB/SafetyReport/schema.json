@@ -1,0 +1,101 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "CloseDate": {
+            "bsonType": "date"
+        },
+        "DueDate": {
+            "bsonType": "date"
+        },
+        "Feedback": {
+            "bsonType": "string"
+        },
+        "IssueDate": {
+            "bsonType": "date"
+        },
+        "IssueOnCompany": {
+            "bsonType": "string"
+        },
+        "IssueOnCompanyName": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "ReportDetailsArea": {
+            "bsonType": "string"
+        },
+        "ReportDetailsLine": {
+            "bsonType": "string"
+        },
+        "ReportDetailsObservation": {
+            "bsonType": "string"
+        },
+        "ReportDetailsRisk": {
+            "bsonType": "string"
+        },
+        "ReportDetailsType": {
+            "bsonType": "string"
+        },
+        "ReportDetailsViolationType": {
+            "bsonType": "string"
+        },
+        "ReportDetailscorrectiveActions": {
+            "bsonType": "string"
+        },
+        "ReporterCode": {
+            "bsonType": "string"
+        },
+        "ReporterDepartment": {
+            "bsonType": "string"
+        },
+        "ReporterName": {
+            "bsonType": "string"
+        },
+        "ResponsibilityDepartment": {
+            "bsonType": "string"
+        },
+        "ResponsibilityPerson": {
+            "bsonType": "string"
+        },
+        "Sent": {
+            "bsonType": "bool"
+        },
+        "SourceOfIssue": {
+            "bsonType": "string"
+        },
+        "Status": {
+            "bsonType": "string"
+        },
+        "ViolationCompany": {
+            "bsonType": "string"
+        },
+        "ViolationCompanyName": {
+            "bsonType": "string"
+        },
+        "ViolationDepartment": {
+            "bsonType": "string"
+        },
+        "ViolationDuring": {
+            "bsonType": "string"
+        },
+        "ViolationName": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "IssueDate",
+        "DueDate",
+        "CloseDate",
+        "Sent"
+    ],
+    "title": "SafetyReport"
+}

@@ -1,0 +1,40 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Brand": {
+            "bsonType": "string"
+        },
+        "BrandType": {
+            "bsonType": "string"
+        },
+        "Code": {
+            "bsonType": "string"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "ExtraData": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "SpareParts": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "OtherComponent"
+}

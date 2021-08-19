@@ -1,0 +1,8 @@
+{
+    "SpareParts": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/SparePart",
+        "source_key": "SpareParts",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

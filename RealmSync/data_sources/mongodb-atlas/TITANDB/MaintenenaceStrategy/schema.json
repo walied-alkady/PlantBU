@@ -1,0 +1,22 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Description": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public"
+    ],
+    "title": "MaintenenaceStrategy"
+}

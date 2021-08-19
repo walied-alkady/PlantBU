@@ -1,0 +1,56 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Brand": {
+            "bsonType": "string"
+        },
+        "BrandType": {
+            "bsonType": "string"
+        },
+        "Code": {
+            "bsonType": "string"
+        },
+        "Description1": {
+            "bsonType": "string"
+        },
+        "Description2": {
+            "bsonType": "string"
+        },
+        "ExtraData": {
+            "bsonType": "string"
+        },
+        "Location": {
+            "bsonType": "string"
+        },
+        "MinQty": {
+            "bsonType": "double"
+        },
+        "OnHand": {
+            "bsonType": "double"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "TrackItem": {
+            "bsonType": "bool"
+        },
+        "Unit": {
+            "bsonType": "string"
+        },
+        "Value": {
+            "bsonType": "double"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "OnHand",
+        "Value",
+        "TrackItem",
+        "MinQty"
+    ],
+    "title": "Spare"
+}

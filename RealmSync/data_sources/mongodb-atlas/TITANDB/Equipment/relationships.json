@@ -1,0 +1,38 @@
+{
+    "Logs": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Log",
+        "source_key": "Logs",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "MaintenenaceTypicals": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/MaintenenaceTypical",
+        "source_key": "MaintenenaceTypicals",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Motors": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Motor",
+        "source_key": "Motors",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "OtherComponents": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/OtherComponent",
+        "source_key": "OtherComponents",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Schedules": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Schedule",
+        "source_key": "Schedules",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Sensors": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Sensor",
+        "source_key": "Sensors",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

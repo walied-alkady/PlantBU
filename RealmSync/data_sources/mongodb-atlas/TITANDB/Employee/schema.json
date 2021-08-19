@@ -1,0 +1,95 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Attendances": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "BirthDate": {
+            "bsonType": "date"
+        },
+        "Company": {
+            "bsonType": "string"
+        },
+        "CompanyCode": {
+            "bsonType": "string"
+        },
+        "ContractType": {
+            "bsonType": "string"
+        },
+        "Department": {
+            "bsonType": "string"
+        },
+        "DepartmentSection": {
+            "bsonType": "string"
+        },
+        "Email": {
+            "bsonType": "string"
+        },
+        "Face": {
+            "bsonType": "string"
+        },
+        "FirstName": {
+            "bsonType": "string"
+        },
+        "FullNameAr": {
+            "bsonType": "string"
+        },
+        "FullNameEN": {
+            "bsonType": "string"
+        },
+        "HoursPerMonth": {
+            "bsonType": "double"
+        },
+        "HrsPerDay": {
+            "bsonType": "double"
+        },
+        "LastName": {
+            "bsonType": "string"
+        },
+        "LeaveBalance": {
+            "bsonType": "double"
+        },
+        "LeaveContracted": {
+            "bsonType": "double"
+        },
+        "Password": {
+            "bsonType": "string"
+        },
+        "PayNetContractedFixed": {
+            "bsonType": "double"
+        },
+        "PayNetContractedVariable": {
+            "bsonType": "double"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Title": {
+            "bsonType": "string"
+        },
+        "UserName": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "BirthDate",
+        "HrsPerDay",
+        "HoursPerMonth",
+        "PayNetContractedFixed",
+        "PayNetContractedVariable",
+        "LeaveContracted",
+        "LeaveBalance"
+    ],
+    "title": "Employee"
+}

@@ -1,0 +1,39 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "FixedMax": {
+            "bsonType": "long"
+        },
+        "FixedMin": {
+            "bsonType": "long"
+        },
+        "FixedSalary": {
+            "bsonType": "double"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "VariableMax": {
+            "bsonType": "long"
+        },
+        "VariableSalary": {
+            "bsonType": "double"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "FixedMax",
+        "FixedMin",
+        "VariableMax",
+        "FixedSalary",
+        "VariableSalary"
+    ],
+    "title": "SocialInsurance"
+}

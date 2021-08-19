@@ -1,0 +1,8 @@
+{
+    "Attendances": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Attendance",
+        "source_key": "Attendances",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

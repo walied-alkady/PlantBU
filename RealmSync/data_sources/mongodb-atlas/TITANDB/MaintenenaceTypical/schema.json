@@ -1,0 +1,41 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "ComponentType": {
+            "bsonType": "string"
+        },
+        "MaintenenaceTypicalsItems": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "PreventiveFrequency": {
+            "bsonType": "string"
+        },
+        "PreventiveStartDate": {
+            "bsonType": "date"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "StrategyName": {
+            "bsonType": "string"
+        },
+        "TypicalDescription": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "PreventiveStartDate"
+    ],
+    "title": "MaintenenaceTypical"
+}

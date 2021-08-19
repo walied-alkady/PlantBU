@@ -1,0 +1,30 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "AttendanceState": {
+            "bsonType": "string"
+        },
+        "InDate": {
+            "bsonType": "date"
+        },
+        "OutDate": {
+            "bsonType": "date"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "InDate",
+        "OutDate"
+    ],
+    "title": "Attendance"
+}

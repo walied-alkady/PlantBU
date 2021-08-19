@@ -1,0 +1,62 @@
+{
+    "Budget": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Budget",
+        "source_key": "Budget",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Contracts": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Contract",
+        "source_key": "Contracts",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Departments": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Department",
+        "source_key": "Departments",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Employees": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Employee",
+        "source_key": "Employees",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Inventories": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Inventory",
+        "source_key": "Inventories",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Logs": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Log",
+        "source_key": "Logs",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "ProductionLines": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/ProductionLine",
+        "source_key": "ProductionLines",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Safety": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Safety",
+        "source_key": "Safety",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "Schedules": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Schedule",
+        "source_key": "Schedules",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Vendors": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Vendor",
+        "source_key": "Vendors",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Budget": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Code": {
+            "bsonType": "string"
+        },
+        "Contracts": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Departments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "Employees": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Inventories": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Location": {
+            "bsonType": "string"
+        },
+        "LocationAltitude": {
+            "bsonType": "double"
+        },
+        "LocationLatitude": {
+            "bsonType": "double"
+        },
+        "LocationLongitude": {
+            "bsonType": "double"
+        },
+        "Logs": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "ProductionLines": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Safety": {
+            "bsonType": "objectId"
+        },
+        "Schedules": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Vendors": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "LocationLongitude",
+        "LocationLatitude",
+        "LocationAltitude"
+    ],
+    "title": "Plant"
+}

@@ -1,0 +1,39 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "EmployeePersonalTaxesFree": {
+            "bsonType": "double"
+        },
+        "Income": {
+            "bsonType": "double"
+        },
+        "Limits": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "double"
+            }
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Values": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "double"
+            }
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "EmployeePersonalTaxesFree",
+        "Income"
+    ],
+    "title": "Taxes"
+}

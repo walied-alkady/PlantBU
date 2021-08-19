@@ -1,0 +1,14 @@
+{
+    "Equipments": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Equipment",
+        "source_key": "Equipments",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "Shops": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Shop",
+        "source_key": "Shops",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

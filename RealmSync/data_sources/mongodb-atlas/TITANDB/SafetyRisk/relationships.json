@@ -1,0 +1,8 @@
+{
+    "SafetyRiskEleminations": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/SafetyRiskElemination",
+        "source_key": "SafetyRiskEleminations",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

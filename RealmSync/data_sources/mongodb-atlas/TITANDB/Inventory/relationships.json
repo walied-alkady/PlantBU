@@ -1,0 +1,8 @@
+{
+    "Spares": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/Spare",
+        "source_key": "Spares",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "DepartmentSections": {
+        "ref": "#/relationship/mongodb-atlas/TITANDB/DepartmentSection",
+        "source_key": "DepartmentSections",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

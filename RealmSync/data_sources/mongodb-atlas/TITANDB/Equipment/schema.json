@@ -1,0 +1,91 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "Brand": {
+            "bsonType": "string"
+        },
+        "BrandType": {
+            "bsonType": "string"
+        },
+        "Code": {
+            "bsonType": "string"
+        },
+        "Description": {
+            "bsonType": "string"
+        },
+        "Extra": {
+            "bsonType": "string"
+        },
+        "LocationAltitude": {
+            "bsonType": "double"
+        },
+        "LocationLatitude": {
+            "bsonType": "double"
+        },
+        "LocationLongitude": {
+            "bsonType": "double"
+        },
+        "Logs": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "MaintenenaceTypicals": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Motors": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "OtherComponents": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Schedules": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Sensors": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "Shop": {
+            "bsonType": "string"
+        },
+        "ShopExtra": {
+            "bsonType": "string"
+        },
+        "Type": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "LocationLongitude",
+        "LocationLatitude",
+        "LocationAltitude"
+    ],
+    "title": "Equipment"
+}

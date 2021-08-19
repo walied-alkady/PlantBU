@@ -1,0 +1,45 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "AssigneeCompanyCode": {
+            "bsonType": "string"
+        },
+        "Cost": {
+            "bsonType": "double"
+        },
+        "DateLog": {
+            "bsonType": "date"
+        },
+        "ItemCode": {
+            "bsonType": "string"
+        },
+        "ItemDescription": {
+            "bsonType": "string"
+        },
+        "Notes": {
+            "bsonType": "string"
+        },
+        "Public": {
+            "bsonType": "string"
+        },
+        "Repair": {
+            "bsonType": "string"
+        },
+        "Repairdetails": {
+            "bsonType": "string"
+        },
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "partition": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "Public",
+        "Cost",
+        "DateLog"
+    ],
+    "title": "Log"
+}
